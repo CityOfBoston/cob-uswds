@@ -2,13 +2,13 @@
   "typefaces": [
     {
       "id": "sans",
-      "name": "Source Sans Pro",
-      "description": "<p>Source Sans Pro is an open-source sans serif typeface created for legibility in UI design. With a variety of weights that read easily at all sizes, Source Sans Pro provides clear headers as well as highly-readable body text.</p>\n<p>Inspired by twentieth-century American gothic typeface design, its slender but open letters offer a clean and friendly simplicity. Advanced hinting allows Source Sans Pro to render well on Windows systems which run Cleartype, and across browsers and devices. Moreover, it supports a variety of languages and alphabets, including Western and European language, Vietnamese, pinyin Romanization of Chinese, and Navajo.</p>"
+      "name": "Montserrat",
+      "description": "<p>The old posters and signs in the traditional Montserrat neighborhood of Buenos Aires inspired Julieta Ulanovsky to design this typeface and rescue the beauty of urban typography that emerged in the first half of the twentieth century. As urban development changes that place, it will never return to its original form and loses forever the designs that are so special and unique. The letters that inspired this project have work, dedication, care, color, contrast, light and life, day and night! These are the types that make the city look so beautiful. Boston uses Montserrat officially to reflect its own blend of historical charm and modern vibrancy, echoing the city's rich architectural heritage and dynamic urban landscape.</p>"
     },
     {
       "id": "serif",
-      "name": "Merriweather",
-      "description": "<p>Merriweather is an open-source serif typeface designed for on-screen reading. This font is ideal for text-dense design: the letterforms have a tall x-height but remain relatively small, making for excellent readability across screen sizes while not occupying extra horizontal space.</p>\n<p>The combination of slim and thick weights gives the font family stylistic range, while conveying a desirable mix of classic, yet modern simplicity. Merriweather communicates warmth and credibility at both large and smaller font sizes.</p>"
+      "name": "Lora",
+      "description": "<p>Lora is a well-balanced contemporary serif with roots in calligraphy. It is a text typeface with moderate contrast well suited for body text. A paragraph set in Lora will make a memorable appearance because of its brushed curves in contrast with driving serifs. The overall typographic voice of Lora perfectly conveys the mood of a modern-day story, or an art essay. Technically Lora is optimised for screen appearance, and works equally well in print. Boston's choice of Lora reflects its commitment to blending tradition with innovation, much like the city's own narrative of historical significance and forward-thinking progress.</p>"
     }
   ]
 }

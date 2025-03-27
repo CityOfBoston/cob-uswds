@@ -1,0 +1,29 @@
+@use "uswds-core" as *;
+
+// Variables
+$slim-footer-height: units(6) !default; // 48px
+$slim-footer-icon-size: units(4) !default; // 32px
+$slim-footer-background-color: color("cob-charles-blue") !default;
+
+// Component styles
+.cob-slim-footer {
+  background-color: $slim-footer-background-color;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: z-index(100);
+
+  &__content {
+    display: flex;
+    align-items: center;
+    height: $slim-footer-height;
+    padding: 0 units(2);
+  }
+
+  &__icon {
+    display: block;
+    height: $slim-footer-icon-size;
+    width: auto;
+    margin-right: units(2);
+  }
+} 

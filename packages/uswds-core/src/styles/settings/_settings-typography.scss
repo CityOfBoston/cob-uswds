@@ -131,12 +131,12 @@ names to something more descriptive.
 */
 
 $theme-typeface-tokens: (
-  example-serif-token: (
-    display-name: "Example Serif Display Name",
+  montserrat: (
+    display-name: "Montserrat",
     cap-height: 364px,
   ),
-  example-sans-token: (
-    display-name: "Example Sans Display Name",
+  lora: (
+    display-name: "Lora",
     cap-height: 364px,
   ),
 ) !default;
@@ -176,10 +176,10 @@ $theme-font-type-lang: false !default;
 $theme-font-type-mono: "roboto-mono" !default;
 
 // sans-serif
-$theme-font-type-sans: "source-sans-pro" !default;
+$theme-font-type-sans: "montserrat" !default;
 
 // serif
-$theme-font-type-serif: "merriweather" !default;
+$theme-font-type-serif: "lora" !default;
 
 /*
 ----------------------------------------
@@ -207,8 +207,8 @@ $theme-font-cond-custom-stack: false !default;
 $theme-font-icon-custom-stack: false !default;
 $theme-font-lang-custom-stack: false !default;
 $theme-font-mono-custom-stack: false !default;
-$theme-font-sans-custom-stack: false !default;
-$theme-font-serif-custom-stack: false !default;
+$theme-font-sans-custom-stack: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$theme-font-serif-custom-stack: "Lora", "Georgia", "Times New Roman", serif !default;
 
 /*
 ----------------------------------------
@@ -270,8 +270,47 @@ $theme-font-cond-custom-src: false !default;
 $theme-font-icon-custom-src: false !default;
 $theme-font-lang-custom-src: false !default;
 $theme-font-mono-custom-src: false !default;
-$theme-font-sans-custom-src: false !default;
-$theme-font-serif-custom-src: false !default;
+$theme-font-sans-custom-src: (
+  dir: 'custom/montserrat',
+  roman: (
+    100: 'Montserrat-Thin',
+    200: 'Montserrat-ExtraLight',
+    300: 'Montserrat-Light',
+    400: 'Montserrat-Regular',
+    500: 'Montserrat-Medium',
+    600: 'Montserrat-SemiBold',
+    700: 'Montserrat-Bold',
+    800: 'Montserrat-ExtraBold',
+    900: 'Montserrat-Black',
+  ),
+  italic: (
+    100: 'Montserrat-ThinItalic',
+    200: 'Montserrat-ExtraLightItalic',
+    300: 'Montserrat-LightItalic',
+    400: 'Montserrat-Italic',
+    500: 'Montserrat-MediumItalic',
+    600: 'Montserrat-SemiBoldItalic',
+    700: 'Montserrat-BoldItalic',
+    800: 'Montserrat-ExtraBoldItalic',
+    900: 'Montserrat-BlackItalic',
+  ),
+) !default;
+
+$theme-font-serif-custom-src: (
+  dir: 'custom/lora',
+  roman: (
+    400: 'Lora-Regular',
+    500: 'Lora-Medium',
+    600: 'Lora-SemiBold',
+    700: 'Lora-Bold',
+  ),
+  italic: (
+    400: 'Lora-Italic',
+    500: 'Lora-MediumItalic',
+    600: 'Lora-SemiBoldItalic',
+    700: 'Lora-BoldItalic',
+  ),
+) !default;
 
 /*
 ----------------------------------------
@@ -290,11 +329,11 @@ tokens.
 ----------------------------------------
 */
 
-$theme-font-role-ui: "sans" !default;
-$theme-font-role-heading: "serif" !default;
-$theme-font-role-body: "sans" !default;
-$theme-font-role-code: "mono" !default;
-$theme-font-role-alt: "serif" !default;
+$theme-font-role-ui: "serif" !default;
+$theme-font-role-heading: "sans" !default;
+$theme-font-role-body: "serif" !default;
+$theme-font-role-code: "serif" !default;
+$theme-font-role-alt: "sans" !default;
 
 /*
 ----------------------------------------

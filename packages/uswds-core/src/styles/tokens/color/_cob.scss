@@ -1,0 +1,10 @@
+// Boston-specific colors
+$color-cob-charles-blue: #091f2f;
+$color-cob-optimistic-blue: #1871bd;
+$color-cob-freedom-trail-red: #fb4d42;
+
+$system-color-cob: (
+  "cob-charles-blue": $color-cob-charles-blue,
+  "cob-optimistic-blue": $color-cob-optimistic-blue,
+  "cob-freedom-trail-red": $color-cob-freedom-trail-red,
+); 

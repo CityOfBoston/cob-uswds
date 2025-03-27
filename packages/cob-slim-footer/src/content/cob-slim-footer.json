@@ -1,0 +1,5 @@
+{
+  "iconUrl": "/path/to/icon.svg",
+  "iconAlt": "Footer Icon",
+  "footerText": "This is the footer text."
+} 

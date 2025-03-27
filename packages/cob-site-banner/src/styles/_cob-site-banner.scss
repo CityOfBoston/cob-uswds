@@ -1,0 +1,200 @@
+// Import USWDS core settings
+@use "uswds-core" as *;
+
+// Variables
+$banner-icon-size: 9rem !default;
+$banner-icon-size-mobile: 5rem !default;
+$banner-chevron-size: 1rem !default;
+$banner-background-color: color("cob-charles-blue") !default; // COB Charles Blue
+$banner-text-color: color("white") !default; // White
+$banner-link-color: color("white") !default; // White
+$banner-details-background-color: color("gray-4") !default; // Equivalent to gray-4
+$banner-details-heading-color: color("cob-optimistic-blue") !default; // COB Optimistic Blue
+$banner-details-text-color: color("ink") !default; // Equivalent to ink
+
+// Component styles
+.cob-site-banner {
+  background-color: $banner-background-color;
+  color: $banner-text-color;
+  font-family: family("sans");
+  font-size: size("body", "3xs");
+  width: 100%;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: units(1) units(2);
+    max-width: units("desktop");
+    margin: 0 auto;
+    height: units(5); // 40px when hidden (using nearest token)
+    transition: height 0.3s ease-in-out;
+    cursor: pointer;
+
+    @include at-media("desktop") {
+      padding: 0 0;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    height: $banner-icon-size-mobile;
+    width: $banner-icon-size-mobile;
+    margin-right: units(1);
+
+    @include at-media("mobile-lg") {
+      height: $banner-icon-size;
+      width: $banner-icon-size;
+      margin-right: units(2);
+    }
+  }
+
+  &__toggle {
+    @include button-unstyled;
+    color: $banner-text-color;
+    cursor: pointer;
+    font-weight: font-weight("normal");
+    margin-left: units(0.5);
+    text-decoration: underline;
+
+    &:hover {
+      color: #e6e6e6; // Equivalent to gray-cool-10
+    }
+
+    &:focus {
+      @include focus-outline;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    margin-left: units(1);
+  }
+
+  &__toggle-icon {
+    @include button-unstyled;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: units(4);
+    width: units(4);
+    cursor: pointer;
+    color: $banner-text-color;
+    background-color: transparent !important;
+    padding: 0;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &:focus {
+      @include focus-outline;
+      background-color: transparent !important;
+    }
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    &:active,
+    &:visited,
+    &[aria-expanded="true"] {
+      background-color: transparent !important;
+    }
+  }
+
+  &__chevron {
+    display: block;
+    width: $banner-chevron-size;
+    height: $banner-chevron-size;
+    background-image: var(--chevron-icon, url("../img/angle-arrow-down.svg"));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  // Update chevron rotation for expanded state
+  [aria-expanded="true"] .cob-site-banner__chevron,
+  .cob-site-banner__toggle-icon[aria-expanded="true"] .cob-site-banner__chevron {
+    transform: rotate(180deg);
+  }
+
+  &__details {
+    background-color: $banner-details-background-color;
+    border-top: 1px solid #dfe1e2;
+    overflow: hidden;
+    pointer-events: none;
+
+    &[hidden] {
+      display: none !important;
+    }
+
+    &:not([hidden]) {
+      display: block !important;
+    }
+  }
+
+  &__details-inner {
+    display: flex;
+    flex-direction: column;
+    max-width: units("desktop");
+    margin: 0 auto;
+    padding: units(2);
+    pointer-events: auto;
+
+    @include at-media("tablet") {
+      flex-direction: row;
+      padding: units(2) 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: units(2);
+    color: $banner-details-text-color;
+
+    @include at-media("tablet") {
+      flex: 1;
+      margin-right: units(2);
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    strong {
+      display: block;
+      margin-bottom: units(0.5);
+      color: $banner-details-heading-color;
+    }
+
+    p {
+      margin: 0;
+      line-height: line-height("body", 4);
+    }
+  }
+
+  &__info-icon {
+    flex-shrink: 0;
+    height: units(8); // Increased from units(3) to units(8) for ~60px
+    width: units(8);  // Increased from units(3) to units(8) for ~60px
+    margin-right: units(2); // Increased margin for better spacing with larger icons
+    margin-top: units(0.5);
+    display: block;
+    object-fit: contain;
+    object-position: center;
+  }
+} 

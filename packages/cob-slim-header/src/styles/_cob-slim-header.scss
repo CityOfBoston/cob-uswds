@@ -1,0 +1,85 @@
+@use "uswds-core" as *;
+
+// Variables
+$slim-header-height: units(6) !default; // 48px
+$slim-header-icon-size: units(4) !default; // 32px
+$slim-header-border-color: color("cob-charles-blue") !default;
+$slim-header-background-color: color("white") !default;
+$slim-header-separator-color: color("ink") !default;
+$slim-header-text-color: color("ink") !default;
+
+// Reset styles for the component
+%reset-text {
+  font-family: family("sans");
+  font-size: size("body", "xs");
+  line-height: line-height("body", 2);
+  -webkit-text-size-adjust: none;
+  font-feature-settings: normal;
+  font-kerning: auto;
+}
+
+// Component styles
+.cob-slim-header {
+  @include typeset;
+  @include border-box-sizing;
+  background-color: $slim-header-background-color;
+  border-bottom: 1px solid $slim-header-border-color;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: z-index(100);
+
+  &__content {
+    @include grid-container($theme-header-max-width);
+    display: flex;
+    align-items: center;
+    height: $slim-header-height;
+    padding: 0 units(1);
+  }
+
+  &__logo-link {
+    @include add-knockout-font-smoothing;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    margin-right: units(2);
+    padding-left: 0;
+
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+
+  &__logo {
+    display: block;
+    height: $slim-header-icon-size;
+    width: auto;
+  }
+
+  &__separator {
+    @include u-display("block");
+    @include u-width(1px);
+    @include u-height(3);
+    @include u-bg("ink");
+    @include u-margin-x(2);
+  }
+
+  &__mayor-text {
+    @include typeset-p;
+    font-style: italic;
+    @include u-margin(0);
+    @include u-padding(0);
+    @include u-text("ink");
+    @include u-white-space("no-wrap");
+    display: flex;
+    align-items: center;
+    margin-left: units(2);
+    margin-top: 0 !important;
+  }
+
+  &__additional-content {
+    @include typeset-p;
+    @include u-margin-left("auto");
+  }
+} 

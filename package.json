@@ -1,7 +1,7 @@
 {
-  "name": "@uswds/uswds",
-  "version": "3.11.0",
-  "description": "Open source UI components and visual style guide for U.S. government websites",
+  "name": "patterns-uswds",
+  "version": "1.0.4",
+  "description": "Customized USWDS UI components and visual style guide based on City of Boston Patterns Library",
   "engines": {
     "node": ">= 4"
   },
@@ -80,37 +80,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/uswds/uswds.git"
+    "url": "https://github.com/xuhongkang/patterns-uswds.git"
   },
-  "author": "18F",
-  "contributors": [
-    "Shawn Allen <shawn.allen@gsa.gov>",
-    "Maya Benari <maya.ben-ari@gsa.gov>",
-    "Cathlene Baptista <cathlene.baptista@gsa.gov>",
-    "Adam Biagianti <adam.biagianti@gsa.gov>",
-    "Sara D. Cope <sara.cope@gsa.gov>",
-    "Rachel Corsino <rachel.corsino@gsa.gov>",
-    "John Donmoyer <john.donmoyer@gsa.gov>",
-    "Stephanie Green <stephanie.green@gsa.gov>",
-    "Matt Henry <matt.henry@gsa.gov>",
-    "Brian Hurst <brian.hurst@gsa.gov>",
-    "Jeremia Kimelman <jeremia.kimelman@gsa.gov>",
-    "Amy Leadem <amy.leadem@gsa.gov>",
-    "Amanda Lloyd <amanda.lloyd@gsa.gov>",
-    "Charles Mahoney <charles.mahoney@gsa.gov>",
-    "James Mejia <james.mejia@gsa.gov>",
-    "Geoffrey Queen <geoffrey.queen@gsa.gov>",
-    "Roger Steve Ruiz <roger.ruiz@gsa.gov>",
-    "Marco Segreto <marco.segreto@gsa.gov>",
-    "Julia Solórzano <julia.solorzano@gsa.gov>",
-    "Atul Varma <atul.varma@gsa.gov>",
-    "Dan O. Williams <daniel.williams@gsa.gov>"
-  ],
+  "author": "xuhongkang",
+  "contributors": [],
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/uswds/uswds/issues"
+    "url": "https://github.com/xuhongkang/patterns-uswds/issues"
   },
-  "homepage": "https://github.com/uswds/uswds#readme",
+  "homepage": "https://github.com/xuhongkang/patterns-uswds#readme",
   "dependencies": {
     "receptor": "1.0.0"
   },

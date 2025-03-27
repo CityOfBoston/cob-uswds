@@ -20,6 +20,9 @@ const table = require("../../../usa-table/src/index");
 const timePicker = require("../../../usa-time-picker/src/index");
 const tooltip = require("../../../usa-tooltip/src/index");
 const validator = require("../../../usa-validation/src/index");
+const cobSiteBanner = require("../../../cob-site-banner/src/index");
+const cobSlimHeader = require("../../../cob-slim-header/src/index");
+const cobSlimFooter = require("../../../cob-slim-footer/src/index");
 
 module.exports = {
   accordion,
@@ -44,4 +47,7 @@ module.exports = {
   timePicker,
   tooltip,
   validator,
+  cobSiteBanner,
+  cobSlimHeader,
+  cobSlimFooter,
 };

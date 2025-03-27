@@ -1,5 +1,34 @@
 @use "../../settings" as *;
 @use "uswds-core/src/styles/functions/color/get-system-color" as *;
+@use "../../functions/general";
+@use "red-cool" as *;
+@use "red" as *;
+@use "red-warm" as *;
+@use "orange-warm" as *;
+@use "orange" as *;
+@use "gold" as *;
+@use "yellow" as *;
+@use "green-warm" as *;
+@use "green" as *;
+@use "green-cool" as *;
+@use "mint" as *;
+@use "mint-cool" as *;
+@use "cyan" as *;
+@use "blue-cool" as *;
+@use "blue" as *;
+@use "blue-warm" as *;
+@use "indigo-cool" as *;
+@use "indigo" as *;
+@use "indigo-warm" as *;
+@use "violet" as *;
+@use "violet-warm" as *;
+@use "magenta" as *;
+@use "gray-cool" as *;
+@use "gray" as *;
+@use "gray-warm" as *;
+@use "black-transparent" as *;
+@use "white-transparent" as *;
+@use "cob" as *;
 
 //red-cool
 $color-red-cool-5: get-system-color("red-cool", 5);
@@ -1064,4 +1093,8 @@ $system-color-shortcodes: (
   "white-transparent-70": $color-white-transparent-70,
   "white-transparent-80": $color-white-transparent-80,
   "white-transparent-90": $color-white-transparent-90,
+  // Boston colors
+  "cob-charles-blue": $color-cob-charles-blue,
+  "cob-optimistic-blue": $color-cob-optimistic-blue,
+  "cob-freedom-trail-red": $color-cob-freedom-trail-red,
 );

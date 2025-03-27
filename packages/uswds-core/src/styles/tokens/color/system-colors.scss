@@ -26,6 +26,7 @@
 @use "black-transparent" as *;
 @use "white-transparent" as *;
 @use "global" as *;
+@use "cob" as *;
 
 @use "../../functions/general" as general;
 
@@ -56,5 +57,6 @@ $system-colors: general.map-collect(
   $system-color-gray,
   $system-color-gray-warm,
   $system-color-black-transparent,
-  $system-color-white-transparent
+  $system-color-white-transparent,
+  $system-color-cob
 );
