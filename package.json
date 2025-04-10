@@ -1,6 +1,6 @@
 {
-  "name": "patterns-uswds",
-  "version": "1.0.4",
+  "name": "cob-uswds",
+  "version": "1.0.2",
   "description": "Customized USWDS UI components and visual style guide based on City of Boston Patterns Library",
   "engines": {
     "node": ">= 4"
@@ -80,15 +80,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xuhongkang/patterns-uswds.git"
+    "url": "https://github.com/xuhongkang/cob-uswds.git"
   },
   "author": "xuhongkang",
   "contributors": [],
   "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
-    "url": "https://github.com/xuhongkang/patterns-uswds/issues"
+    "url": "https://github.com/xuhongkang/cob-uswds/issues"
   },
-  "homepage": "https://github.com/xuhongkang/patterns-uswds#readme",
+  "homepage": "https://github.com/xuhongkang/cob-uswds#readme",
   "dependencies": {
     "receptor": "1.0.0"
   },

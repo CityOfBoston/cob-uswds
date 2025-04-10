@@ -1,4 +1,4 @@
-// Import USWDS core settings
+// Import USWDS core settings and COB tokens
 @use "uswds-core" as *;
 
 // Variables
@@ -24,10 +24,10 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: units(1) units(2);
+    padding: 0 units(2);
     max-width: units("desktop");
     margin: 0 auto;
-    height: units(5); // 40px when hidden (using nearest token)
+    height: units(5); // 40px (nearest token to 38px)
     transition: height 0.3s ease-in-out;
     cursor: pointer;
 
@@ -40,12 +40,14 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
 
   &__icon {
+    display: block;
+    margin-right: units(1);
     height: $banner-icon-size-mobile;
     width: $banner-icon-size-mobile;
-    margin-right: units(1);
 
     @include at-media("mobile-lg") {
       height: $banner-icon-size;
@@ -57,14 +59,11 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
   &__toggle {
     @include button-unstyled;
     color: $banner-text-color;
-    cursor: pointer;
     font-weight: font-weight("normal");
     margin-left: units(0.5);
     text-decoration: underline;
-
-    &:hover {
-      color: #e6e6e6; // Equivalent to gray-cool-10
-    }
+    cursor: inherit;
+    pointer-events: none;
 
     &:focus {
       @include focus-outline;
@@ -84,7 +83,8 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     justify-content: center;
     height: units(4);
     width: units(4);
-    cursor: pointer;
+    cursor: inherit;
+    pointer-events: none;
     color: $banner-text-color;
     background-color: transparent !important;
     padding: 0;
@@ -97,26 +97,12 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
       @include focus-outline;
       background-color: transparent !important;
     }
-
-    &:hover {
-      background-color: transparent !important;
-    }
-
-    &:active,
-    &:visited,
-    &[aria-expanded="true"] {
-      background-color: transparent !important;
-    }
   }
 
   &__chevron {
     display: block;
-    width: $banner-chevron-size;
     height: $banner-chevron-size;
-    background-image: var(--chevron-icon, url("../img/angle-arrow-down.svg"));
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    width: $banner-chevron-size;
     transform: rotate(0deg);
     transition: transform 0.3s ease-in-out;
     will-change: transform;
@@ -164,6 +150,7 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     align-items: flex-start;
     margin-bottom: units(2);
     color: $banner-details-text-color;
+    position: relative;
 
     @include at-media("tablet") {
       flex: 1;
@@ -188,13 +175,11 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
   }
 
   &__info-icon {
-    flex-shrink: 0;
-    height: units(8); // Increased from units(3) to units(8) for ~60px
-    width: units(8);  // Increased from units(3) to units(8) for ~60px
-    margin-right: units(2); // Increased margin for better spacing with larger icons
-    margin-top: units(0.5);
     display: block;
-    object-fit: contain;
-    object-position: center;
+    flex-shrink: 0;
+    margin-right: units(2);
+    margin-top: units(0.5);
+    height: units(8);
+    width: units(8);
   }
 } 

@@ -3,12 +3,10 @@
     <a href="{{ logoUrl }}" class="cob-slim-header__logo-link">
       <img src="{{ bostonLogo }}" alt="{{ logoAlt }}" class="cob-slim-header__logo" />
     </a>
-    <div class="cob-slim-header__separator"></div>
+    <span class="cob-slim-header__separator"></span>
     <p class="cob-slim-header__mayor-text">{{ mayorText }}</p>
     {% if additionalContent %}
-      <div class="cob-slim-header__additional-content">
-        {{ additionalContent }}
-      </div>
+      <div class="cob-slim-header__additional-content">{{ additionalContent }}</div>
     {% endif %}
   </div>
 </div> 

@@ -1,6 +1,24 @@
 <div class="cob-slim-footer" data-slim-footer>
   <div class="cob-slim-footer__content">
-    <img src="{{ iconUrl }}" alt="{{ iconAlt }}" class="cob-slim-footer__icon" />
-    <div class="cob-slim-footer__text">{{ footerText }}</div>
+    <div class="cob-slim-footer__left">
+      <img src="{{ footerIcon }}" alt="Boston.gov" class="cob-slim-footer__icon" />
+    </div>
+    
+    <nav class="cob-slim-footer__nav">
+      <ul class="cob-slim-footer__nav-list">
+        <li><a href="{{ privacyPolicyUrl }}">PRIVACY POLICY</a></li>
+        <li><a href="{{ contactUrl }}">CONTACT US</a></li>
+        <li><a href="{{ jobsUrl }}">JOBS</a></li>
+        <li><a href="{{ publicRecordsUrl }}">PUBLIC RECORDS</a></li>
+        <li><a href="{{ accessibilityUrl }}">LANGUAGE AND DISABILITY ACCESS</a></li>
+      </ul>
+    </nav>
+
+    <div class="cob-slim-footer__right">
+      <a href="{{ reportIssueUrl }}" class="cob-slim-footer__report">
+        <span>Report an issue</span>
+        <img src="{{ threeoneoneSvg }}" alt="311" class="cob-slim-footer__311-icon" />
+      </a>
+    </div>
   </div>
 </div> 

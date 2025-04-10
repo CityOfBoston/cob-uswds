@@ -1,25 +1,51 @@
 import component from "./cob-slim-footer.twig";
 import behavior from "./index.js";
-import footerIcon from "./img/footer-icon.svg";
+import footerIcon from "./img/footer-icon.png";
+import threeoneoneSvg from "./img/311.svg";
 
 export default {
   title: "Components/COB Slim Footer",
   argTypes: {
-    iconUrl: {
+    footerIcon: {
       control: { type: "text" },
-      description: "URL for the icon",
+      description: "URL for the footer icon",
       defaultValue: footerIcon,
     },
-    iconAlt: {
+    threeoneoneSvg: {
       control: { type: "text" },
-      description: "Alt text for the icon",
-      defaultValue: "Footer Icon",
+      description: "URL for the 311 icon",
+      defaultValue: threeoneoneSvg,
     },
-    footerText: {
+    privacyPolicyUrl: {
       control: { type: "text" },
-      description: "Text for the footer",
-      defaultValue: "This is the footer text.",
+      description: "URL for Privacy Policy",
+      defaultValue: "#",
     },
+    contactUrl: {
+      control: { type: "text" },
+      description: "URL for Contact Us",
+      defaultValue: "#",
+    },
+    jobsUrl: {
+      control: { type: "text" },
+      description: "URL for Jobs",
+      defaultValue: "#",
+    },
+    publicRecordsUrl: {
+      control: { type: "text" },
+      description: "URL for Public Records",
+      defaultValue: "#",
+    },
+    accessibilityUrl: {
+      control: { type: "text" },
+      description: "URL for Language and Disability Access",
+      defaultValue: "#",
+    },
+    reportIssueUrl: {
+      control: { type: "text" },
+      description: "URL for Report an Issue",
+      defaultValue: "#",
+    }
   },
   parameters: {
     docs: {
@@ -45,7 +71,12 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  iconUrl: footerIcon,
-  iconAlt: "Footer Icon",
-  footerText: "This is the footer text.",
+  footerIcon: footerIcon,
+  threeoneoneSvg: threeoneoneSvg,
+  privacyPolicyUrl: "#",
+  contactUrl: "#",
+  jobsUrl: "#",
+  publicRecordsUrl: "#",
+  accessibilityUrl: "#",
+  reportIssueUrl: "#"
 }; 

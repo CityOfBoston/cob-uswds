@@ -1,7 +1,7 @@
 @use "uswds-core" as *;
 
 // Variables
-$slim-footer-height: units(6) !default; // 48px
+$slim-footer-height: units(8) !default; // 64px
 $slim-footer-icon-size: units(4) !default; // 32px
 $slim-footer-background-color: color("cob-charles-blue") !default;
 
@@ -16,14 +16,100 @@ $slim-footer-background-color: color("cob-charles-blue") !default;
   &__content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: $slim-footer-height;
     padding: 0 units(2);
+    max-width: units("desktop");
+    margin: 0 auto;
+  }
+
+  &__left {
+    flex-shrink: 0;
+    position: relative;
   }
 
   &__icon {
     display: block;
     height: $slim-footer-icon-size;
     width: auto;
-    margin-right: units(2);
+  }
+
+  &__nav {
+    flex: 1;
+    margin: 0 units(4);
+  }
+
+  &__nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 units(2);
+      
+      &:first-child {
+        margin-left: 0;
+      }
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      color: color("white");
+      text-decoration: none;
+      font-size: size("body", "3xs");
+      font-family: family("heading");
+      font-weight: font-weight("normal");
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__right {
+    flex-shrink: 0;
+  }
+
+  &__report {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    
+    span {
+      color: color("yellow-30v");
+      margin-right: units(1.5);
+      font-weight: font-weight("normal");
+    }
+
+    &:hover {
+      span {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__311-icon {
+    display: block;
+    height: units(3);
+    width: auto;
+  }
+}
+
+// Responsive adjustments
+@include at-media-max("desktop") {
+  .cob-slim-footer {
+    &__nav-list {
+      display: none; // Hide navigation on mobile
+    }
+
+    &__content {
+      justify-content: space-between;
+    }
   }
 } 

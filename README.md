@@ -18,7 +18,7 @@ To add a new custom COB component, follow these steps:
 
 5. **Update Global Styles**: Create `src/stylesheets/packages/_my-new-component.scss` to forward your component styles. Ensure you follow the existing import conventions. This will ensure that any new components' styles are built and compiled into `dist/css/uswds.css` for distribution.
 
-6. **Update Global Javascript**: In `packages/uswds-core/src/js/index.js` add your new component as an exported object. Follow existing exports' paths to properly include your new component. This will ensure that any new components' styles are built and minimized into both `dist/js/patterns-uswds.min.js` and `dist/js/uswds-init.min.js` for distribution.
+6. **Update Global Javascript**: In `packages/uswds-core/src/js/index.js` add your new component as an exported object. Follow existing exports' paths to properly include your new component. This will ensure that any new components' styles are built and minimized into both `dist/js/cob-uswds.min.js` and `dist/js/uswds-init.min.js` for distribution.
 
 ### Formats and Conventions
 
@@ -41,7 +41,7 @@ To add a new custom COB component, follow these steps:
 
 - **Condition**: You must change the version number in package.json to a version higher than any previously published version.
 
-- **Command**: Use `npm pack` to package the repository as patterns-uswds-x.x.x.tgz.
+- **Command**: Use `npm pack` to package the repository as cob-uswds-x.x.x.tgz.
 - **Purpose**: Packaging the repo is a prerequisite to publishing the package on npm.
 
 - **Command**: Use `npm publish` to package and ship your component to npm.
@@ -53,11 +53,11 @@ To add a new custom COB component, follow these steps:
 
 1. **Install the Package**: Use the following command to install the package:
    ```bash
-   npm install @account/patterns-uswds
+   npm install @account/cob-uswds
    ```
 2. **Import SCSS**: Import the SCSS source in your React app if it supports SCSS:
    ```scss
-   @import 'node_modules/@account/patterns-uswds/dist/scss/stylesheets/uswds.scss';
+   @import 'node_modules/@account/cob-uswds/dist/scss/stylesheets/uswds.scss';
    ```
 3. **Using Theme Tokens**: Utilize USWDS theme tokens for consistent design:
    ```scss
@@ -71,11 +71,11 @@ To add a new custom COB component, follow these steps:
 
 1. **Install the Package**: Use the following command to install the package:
    ```bash
-   npm install @account/patterns-uswds
+   npm install @account/cob-uswds
    ```
 2. **Import CSS**: Import the compiled CSS in your project:
    ```html
-   <link rel="stylesheet" href="node_modules/@account/patterns-uswds/dist/css/uswds.min.css">
+   <link rel="stylesheet" href="node_modules/@account/cob-uswds/dist/css/uswds.min.css">
    ```
 3. **Using Theme Tokens**: Reference theme tokens in your custom styles:
    ```html

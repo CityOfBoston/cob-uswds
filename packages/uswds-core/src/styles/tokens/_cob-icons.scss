@@ -1,0 +1,25 @@
+// COB Icons - Centralized icon definitions
+@use "sass:map";
+
+// Common icon mappings used across COB components
+$cob-icons: (
+  // Site banner icons
+  "boston": "account_balance",
+  "https": "security",
+  "chevron": "expand_more",
+  
+  // Header icons  
+  "header-logo": "account_balance",
+  
+  // Footer icons
+  "footer-logo": "account_balance",
+  "311": "support_agent"
+);
+
+// Function to get an icon from the map
+@function get-cob-icon($key) {
+  @return map.get($cob-icons, $key);
+}
+
+// Export the icons map and helper function
+@forward "cob-icons" show $cob-icons, get-cob-icon; 

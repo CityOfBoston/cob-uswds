@@ -3,7 +3,7 @@
 <div class="cob-site-banner" data-site-banner>
   <div class="cob-site-banner__content">
     <div class="cob-site-banner__left">
-      <img src="{{ bostonIcon }}" alt="Boston.gov Icon" class="cob-site-banner__icon" />
+      <img src="{{ bostonIcon }}" alt="" class="cob-site-banner__icon">
       <span>{{ bannerText }} 
         <button class="cob-site-banner__toggle" aria-expanded="{{ isExpanded ? 'true' : 'false' }}" aria-controls="{{ banner_id }}">
           {{ toggleText }}
@@ -15,11 +15,11 @@
     </div>
     <div class="cob-site-banner__right">
       <button class="cob-site-banner__toggle-icon" aria-expanded="{{ isExpanded ? 'true' : 'false' }}" aria-controls="{{ banner_id }}" aria-label="{{ toggleText }}">
-        <span class="cob-site-banner__chevron"></span>
+        <img src="{{ angleArrowDown }}" alt="" class="cob-site-banner__chevron">
       </button>
       <noscript>
         <a href="#{{ banner_id }}" class="cob-site-banner__toggle-icon" aria-label="{{ toggleText }}">
-          <span class="cob-site-banner__chevron"></span>
+          <img src="{{ angleArrowDown }}" alt="" class="cob-site-banner__chevron">
         </a>
       </noscript>
     </div>
@@ -28,14 +28,14 @@
   <div class="cob-site-banner__details" id="{{ banner_id }}" {{ isExpanded ? '' : 'hidden' }}>
     <div class="cob-site-banner__details-inner">
       <div class="cob-site-banner__info">
-        <img src="{{ cityHallIcon }}" alt="City Hall Icon" class="cob-site-banner__info-icon" width="75" height="75" />
+        <img src="{{ cityHallIcon }}" alt="" class="cob-site-banner__info-icon">
         <div>
           <strong>{{ officialWebsiteHeading }}</strong>
           <p>{{ officialWebsiteText }}</p>
         </div>
       </div>
       <div class="cob-site-banner__info">
-        <img src="{{ httpsLockIcon }}" alt="HTTPS Lock Icon" class="cob-site-banner__info-icon" width="120" height="120" />
+        <img src="{{ httpsLockIcon }}" alt="" class="cob-site-banner__info-icon">
         <div>
           <strong>{{ secureWebsiteHeading }}</strong>
           <p>{{ secureWebsiteText }}</p>

@@ -1,8 +1,8 @@
 @use "uswds-core" as *;
 
 // Variables
-$slim-header-height: units(6) !default; // 48px
-$slim-header-icon-size: units(4) !default; // 32px
+$slim-header-height: units(8) !default; // 64px
+$slim-header-icon-size: units(7) !default; // 56px
 $slim-header-border-color: color("cob-charles-blue") !default;
 $slim-header-background-color: color("white") !default;
 $slim-header-separator-color: color("ink") !default;
@@ -45,6 +45,7 @@ $slim-header-text-color: color("ink") !default;
     color: inherit;
     margin-right: units(2);
     padding-left: 0;
+    position: relative;
 
     &:hover, &:focus {
       text-decoration: none;

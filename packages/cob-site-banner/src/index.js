@@ -12,16 +12,15 @@ const BANNER_CONTENT = `.cob-site-banner__content`;
  * @param {Event} event - The click event
  */
 const toggleBanner = function toggleBanner(event) {
-  // Only handle clicks on toggle buttons
-  const toggleButton = event.target.closest(BANNER_TOGGLE);
-  if (!toggleButton) return;
+  // Get the banner content element that was clicked
+  const contentElement = event.target.closest(BANNER_CONTENT);
+  if (!contentElement) return;
   
-  const banner = toggleButton.closest(BANNER);
+  const banner = contentElement.closest(BANNER);
   if (!banner) return;
   
   const detailsElement = banner.querySelector(BANNER_DETAILS);
-  const contentElement = banner.querySelector(BANNER_CONTENT);
-  if (!detailsElement || !contentElement) return;
+  if (!detailsElement) return;
   
   const isCurrentlyHidden = detailsElement.hasAttribute('hidden');
   
@@ -43,7 +42,7 @@ const toggleBanner = function toggleBanner(event) {
 const bannerBehavior = behavior(
   {
     [CLICK]: {
-      [BANNER_TOGGLE]: toggleBanner, // Changed to only listen on toggle elements
+      [BANNER_CONTENT]: toggleBanner, // Changed to listen on content element
     },
   },
   {
