@@ -48,6 +48,10 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     margin-right: units(1);
     height: $banner-icon-size-mobile;
     width: $banner-icon-size-mobile;
+    background-image: url('../img/cob-boston-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 
     @include at-media("mobile-lg") {
       height: $banner-icon-size;
@@ -81,8 +85,8 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     display: flex;
     align-items: center;
     justify-content: center;
-    height: units(4);
-    width: units(4);
+    height: $banner-chevron-size;
+    width: $banner-chevron-size;
     cursor: inherit;
     pointer-events: none;
     color: $banner-text-color;
@@ -92,28 +96,19 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    background-image: url('../img/cob-angle-arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 
     &:focus {
       @include focus-outline;
       background-color: transparent !important;
     }
-  }
 
-  &__chevron {
-    display: block;
-    height: $banner-chevron-size;
-    width: $banner-chevron-size;
-    transform: rotate(0deg);
-    transition: transform 0.3s ease-in-out;
-    will-change: transform;
-    background-color: transparent;
-    padding: 0;
-  }
-
-  // Update chevron rotation for expanded state
-  [aria-expanded="true"] .cob-site-banner__chevron,
-  .cob-site-banner__toggle-icon[aria-expanded="true"] .cob-site-banner__chevron {
-    transform: rotate(180deg);
+    &[aria-expanded="true"] {
+      transform: rotate(180deg);
+    }
   }
 
   &__details {
@@ -141,7 +136,7 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
 
     @include at-media("tablet") {
       flex-direction: row;
-      padding: units(2) 0;
+      padding: units(2) 10%;
     }
   }
 
@@ -171,6 +166,7 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     p {
       margin: 0;
       line-height: line-height("body", 4);
+      font-family: family("serif");
     }
   }
 
@@ -181,5 +177,13 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     margin-top: units(0.5);
     height: units(8);
     width: units(8);
+    background-image: url('../img/cob-city-hall-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__info:last-child &__info-icon {
+    background-image: url('../img/cob-https-lock-icon.svg');
   }
 } 

@@ -1,50 +1,38 @@
 import component from "./cob-slim-footer.twig";
 import behavior from "./index.js";
-import footerIcon from "./img/footer-icon.png";
-import threeoneoneSvg from "./img/311.svg";
 
 export default {
   title: "Components/COB Slim Footer",
   argTypes: {
-    footerIcon: {
-      control: { type: "text" },
-      description: "URL for the footer icon",
-      defaultValue: footerIcon,
-    },
-    threeoneoneSvg: {
-      control: { type: "text" },
-      description: "URL for the 311 icon",
-      defaultValue: threeoneoneSvg,
-    },
     privacyPolicyUrl: {
       control: { type: "text" },
       description: "URL for Privacy Policy",
-      defaultValue: "#",
+      defaultValue: "https://www.boston.gov/departments/innovation-and-technology/terms-use-and-privacy-policy-city-boston-digital-services",
     },
     contactUrl: {
       control: { type: "text" },
       description: "URL for Contact Us",
-      defaultValue: "#",
+      defaultValue: "https://www.boston.gov/departments/mayors-office/contact-boston-city-hall",
     },
     jobsUrl: {
       control: { type: "text" },
       description: "URL for Jobs",
-      defaultValue: "#",
+      defaultValue: "https://www.boston.gov/career-center",
     },
     publicRecordsUrl: {
       control: { type: "text" },
       description: "URL for Public Records",
-      defaultValue: "#",
+      defaultValue: "https://www.boston.gov/departments/public-records",
     },
     accessibilityUrl: {
       control: { type: "text" },
       description: "URL for Language and Disability Access",
-      defaultValue: "#",
+      defaultValue: "https://www.boston.gov/departments/language-and-communications-access/notice-accommodations",
     },
     reportIssueUrl: {
       control: { type: "text" },
       description: "URL for Report an Issue",
-      defaultValue: "#",
+      defaultValue: "http://www.cityofboston.gov/311/",
     }
   },
   parameters: {
@@ -57,9 +45,14 @@ export default {
 };
 
 const Template = (args) => {
+  const defaultArgs = {
+    ...args,
+    // No need for assetPath or direct asset imports since we're using background images
+  };
+
   // Render the component
   const element = document.createElement('div');
-  element.innerHTML = component(args);
+  element.innerHTML = component(defaultArgs);
   
   // Initialize the behavior after a short delay to ensure DOM is ready
   setTimeout(() => {
@@ -71,12 +64,5 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  footerIcon: footerIcon,
-  threeoneoneSvg: threeoneoneSvg,
-  privacyPolicyUrl: "#",
-  contactUrl: "#",
-  jobsUrl: "#",
-  publicRecordsUrl: "#",
-  accessibilityUrl: "#",
-  reportIssueUrl: "#"
+  // Using the default values from argTypes
 }; 

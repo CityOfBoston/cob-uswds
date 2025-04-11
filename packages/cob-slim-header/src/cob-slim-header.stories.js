@@ -1,6 +1,6 @@
 import component from "./cob-slim-header.twig";
 import behavior from "./index.js";
-import bostonLogo from "./img/boston-logo.svg";
+import bostonLogo from "./img/cob-boston-logo.svg";
 
 export default {
   title: "Components/COB Slim Header",
@@ -23,7 +23,7 @@ export default {
     additionalContent: {
       control: { type: "text" },
       description: "Additional content to display after the separator",
-    },
+    }
   },
   parameters: {
     docs: {
@@ -35,15 +35,16 @@ export default {
 };
 
 const Template = (args) => {
-  // Add assets to args
-  const argsWithAssets = {
+  const defaultArgs = {
     ...args,
-    bostonLogo,
+    // In Storybook, we use the imported assets directly
+    assetPath: "",
+    bostonLogo
   };
 
   // Render the component
   const element = document.createElement('div');
-  element.innerHTML = component(argsWithAssets);
+  element.innerHTML = component(defaultArgs);
   
   // Initialize the behavior after a short delay to ensure DOM is ready
   setTimeout(() => {
@@ -58,5 +59,5 @@ Default.args = {
   logoUrl: "https://www.boston.gov",
   logoAlt: "City of Boston",
   mayorText: "Mayor Michelle Wu",
-  additionalContent: "",
+  additionalContent: ""
 }; 

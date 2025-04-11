@@ -2,7 +2,7 @@
 
 // Variables
 $slim-header-height: units(8) !default; // 64px
-$slim-header-icon-size: units(7) !default; // 56px
+$slim-header-icon-size: units(5) !default; // 40px
 $slim-header-border-color: color("cob-charles-blue") !default;
 $slim-header-background-color: color("white") !default;
 $slim-header-separator-color: color("ink") !default;
@@ -56,6 +56,11 @@ $slim-header-text-color: color("ink") !default;
     display: block;
     height: $slim-header-icon-size;
     width: auto;
+    min-width: calc($slim-header-icon-size * 3.5);
+    background-image: url('../img/cob-boston-logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 
   &__separator {

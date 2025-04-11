@@ -1,9 +1,9 @@
 import component from "./cob-site-banner.twig";
 import behavior from "./index.js";
-import bostonIcon from "./img/boston-icon.svg";
-import cityHallIcon from "./img/city-hall-icon.svg";
-import httpsLockIcon from "./img/https-lock-icon.svg";
-import angleArrowDown from "./img/angle-arrow-down.svg";
+import bostonIcon from "./img/cob-boston-icon.svg";
+import cityHallIcon from "./img/cob-city-hall-icon.svg";
+import httpsLockIcon from "./img/cob-https-lock-icon.svg";
+import angleArrowDown from "./img/cob-angle-arrow-down.svg";
 
 export default {
   title: "Components/COB Site Banner",
@@ -31,22 +31,6 @@ export default {
     secureWebsiteText: {
       control: { type: "text" },
       defaultValue: "A lock or https:// means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.",
-    },
-    bostonIcon: {
-      control: { type: "text" },
-      defaultValue: bostonIcon,
-    },
-    cityHallIcon: {
-      control: { type: "text" },
-      defaultValue: cityHallIcon,
-    },
-    httpsLockIcon: {
-      control: { type: "text" },
-      defaultValue: httpsLockIcon,
-    },
-    angleArrowDown: {
-      control: { type: "text" },
-      defaultValue: angleArrowDown,
     }
   },
   parameters: {
@@ -61,7 +45,11 @@ export default {
 const Template = (args) => {
   const defaultArgs = {
     ...args,
-    isExpanded: false
+    isExpanded: false,
+    bostonIcon,
+    cityHallIcon,
+    httpsLockIcon,
+    angleArrowDown
   };
   
   const element = document.createElement('div');

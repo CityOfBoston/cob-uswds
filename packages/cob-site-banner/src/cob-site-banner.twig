@@ -3,7 +3,7 @@
 <div class="cob-site-banner" data-site-banner>
   <div class="cob-site-banner__content">
     <div class="cob-site-banner__left">
-      <img src="{{ bostonIcon }}" alt="" class="cob-site-banner__icon">
+      <span class="cob-site-banner__icon"></span>
       <span>{{ bannerText }} 
         <button class="cob-site-banner__toggle" aria-expanded="{{ isExpanded ? 'true' : 'false' }}" aria-controls="{{ banner_id }}">
           {{ toggleText }}
@@ -14,13 +14,9 @@
       </span>
     </div>
     <div class="cob-site-banner__right">
-      <button class="cob-site-banner__toggle-icon" aria-expanded="{{ isExpanded ? 'true' : 'false' }}" aria-controls="{{ banner_id }}" aria-label="{{ toggleText }}">
-        <img src="{{ angleArrowDown }}" alt="" class="cob-site-banner__chevron">
-      </button>
+      <button class="cob-site-banner__toggle-icon" aria-expanded="{{ isExpanded ? 'true' : 'false' }}" aria-controls="{{ banner_id }}" aria-label="{{ toggleText }}"></button>
       <noscript>
-        <a href="#{{ banner_id }}" class="cob-site-banner__toggle-icon" aria-label="{{ toggleText }}">
-          <img src="{{ angleArrowDown }}" alt="" class="cob-site-banner__chevron">
-        </a>
+        <a href="#{{ banner_id }}" class="cob-site-banner__toggle-icon" aria-label="{{ toggleText }}"></a>
       </noscript>
     </div>
   </div>
@@ -28,14 +24,14 @@
   <div class="cob-site-banner__details" id="{{ banner_id }}" {{ isExpanded ? '' : 'hidden' }}>
     <div class="cob-site-banner__details-inner">
       <div class="cob-site-banner__info">
-        <img src="{{ cityHallIcon }}" alt="" class="cob-site-banner__info-icon">
+        <span class="cob-site-banner__info-icon"></span>
         <div>
           <strong>{{ officialWebsiteHeading }}</strong>
           <p>{{ officialWebsiteText }}</p>
         </div>
       </div>
       <div class="cob-site-banner__info">
-        <img src="{{ httpsLockIcon }}" alt="" class="cob-site-banner__info-icon">
+        <span class="cob-site-banner__info-icon"></span>
         <div>
           <strong>{{ secureWebsiteHeading }}</strong>
           <p>{{ secureWebsiteText }}</p>
