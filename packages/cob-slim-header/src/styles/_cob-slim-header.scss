@@ -23,7 +23,7 @@ $slim-header-text-color: color("ink") !default;
   @include typeset;
   @include border-box-sizing;
   background-color: $slim-header-background-color;
-  border-bottom: 1px solid $slim-header-border-color;
+  border-bottom: 1px solid #F2F2F2;
   width: 100%;
   position: sticky;
   top: 0;
@@ -35,6 +35,7 @@ $slim-header-text-color: color("ink") !default;
     align-items: center;
     height: $slim-header-height;
     padding: 0 units(1);
+    position: relative;
   }
 
   &__logo-link {
@@ -87,5 +88,39 @@ $slim-header-text-color: color("ink") !default;
   &__additional-content {
     @include typeset-p;
     @include u-margin-left("auto");
+  }
+}
+
+// Mobile adjustments
+@include at-media-max("desktop") {
+  .cob-slim-header {
+    &__content {
+      height: units(5); // Reduced height for mobile
+      padding: 0 units(0.5); // Further reduced padding
+    }
+
+    &__logo-link {
+      margin-right: units(1); // Reduce margin
+    }
+
+    &__logo {
+      height: units(3); // Further reduce logo size
+      min-width: calc($slim-header-icon-size * 2.5); // Reduce min-width
+    }
+
+    &__separator {
+      @include u-height(2); // Reduce separator height
+      @include u-margin-x(1); // Reduce horizontal margin
+    }
+
+    &__mayor-text {
+      font-size: size("body", "3xs"); // Reduce text size
+      margin-left: units(1); // Reduce margin
+      @include u-white-space("wrap"); // Allow text to wrap if needed
+    }
+
+    &__additional-content {
+      display: none; // Hide additional content on mobile
+    }
   }
 } 

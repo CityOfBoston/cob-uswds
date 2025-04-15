@@ -122,4 +122,30 @@ $slim-footer-background-color: color("cob-charles-blue") !default;
       justify-content: space-between;
     }
   }
+}
+
+// Mobile adjustments
+@include at-media-max("desktop") {
+  .cob-slim-footer {
+    &__content {
+      height: units(5); // Reduced height for mobile
+      padding: 0 units(1); // Reduce padding
+    }
+
+    &__icon {
+      height: units(3); // Reduce icon size
+      min-width: calc($slim-footer-icon-size * 1.2); // Adjust min-width
+    }
+
+    &__311-icon {
+      height: units(3); // Reduce 311 icon size
+      min-width: units(2); // Adjust min-width
+    }
+
+    &__report {
+      span {
+        font-size: size("body", "3xs"); // Reduce text size
+      }
+    }
+  }
 } 
