@@ -1,0 +1,44 @@
+@use "bwds-core" as *;
+
+// A collection of media block objects
+
+.cob-graphic-list {
+  @include typeset;
+  @include border-box-sizing;
+
+  .cob-graphic-list__row {
+    .cob-media-block {
+      margin-bottom: units(4);
+
+      @include at-media("tablet") {
+        margin-bottom: units(8);
+      }
+    }
+
+    &:last-child {
+      .cob-media-block {
+        @include at-media("tablet") {
+          margin-bottom: 0;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .cob-media-block__img {
+    margin-right: units(3);
+  }
+
+  .cob-media-block__body {
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.cob-graphic-list__heading {
+  @include typeset-h3;
+}

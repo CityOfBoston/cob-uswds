@@ -1,0 +1,50 @@
+<div class="grid-container padding-x-2 tablet-padding-x-4 padding-y-4">
+  <h2>Incorrect text color on current items in sidenav</h2>
+  <p class="cob-intro">
+    Based on this <a href="https://github.com/bwds/bwds/issues/4073">issue</a>. Added buttons to make sure there are no regressions related to <a href="https://github.com/bwds/bwds/issues/3838">buttons</a>.
+  </p>
+  <nav aria-label="Secondary navigation">
+    <ul class="cob-sidenav">
+      <li class="cob-sidenav__item">
+        <a class="cob-button" href="javascript:void(0);">Parent button link</a>
+      </li>
+      <li class="cob-sidenav__item">
+        <a href="javascript:void(0);" class="cob-current">Current page</a>
+        <ul class="cob-sidenav__sublist">
+          <li class="cob-sidenav__item">
+            <a href="javascript:void(0);">Child link</a>
+          </li>
+          <li class="cob-sidenav__item">
+            <a href="javascript:void(0);" class="cob-current">Child link</a>
+            <ul class="cob-sidenav__sublist">
+              <li class="cob-sidenav__item">
+                <a href="javascript:void(0);">Grandchild link</a>
+              </li>
+              <li class="cob-sidenav__item">
+                <a href="javascript:void(0);">Grandchild link</a>
+              </li>
+              <li class="cob-sidenav__item">
+                <a href="javascript:void(0);" class="cob-current">Grandchild link</a>
+              </li>
+              <li class="cob-sidenav__item">
+                <a href="javascript:void(0);">Grandchild link</a>
+              </li>
+            </ul>
+          </li>
+          <li class="cob-sidenav__item">
+            <a href="javascript:void(0);">Child link</a>
+          </li>
+          <li class="cob-sidenav__item">
+            <button type="button" class="cob-button cob-button--accent-warm">Child button</button>
+          </li>
+          <li class="cob-sidenav__item">
+            <a href="javascript:void(0);">Child link</a>
+          </li>
+        </ul>
+      </li>
+      <li class="cob-sidenav__item">
+        <a href="javascript:void(0);">Parent link</a>
+      </li>
+    </ul>
+  </nav>
+</div>

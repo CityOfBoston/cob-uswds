@@ -16,7 +16,7 @@ module.exports = {
     const pluginsProcess = [discardComments(), autoprefixer()];
     const pluginsMinify = [csso({ forceMediaMerge: false })];
 
-    return src("src/stylesheets/uswds.scss")
+    return src("src/stylesheets/bwds.scss")
       .pipe(sourcemaps.init({ largeFile: true }))
       .pipe(
         sass({
@@ -28,7 +28,7 @@ module.exports = {
         }),
       )
       .pipe(postcss(pluginsProcess))
-      .pipe(replace(/\buswds @version\b/g, `uswds v${pkg.version}`))
+      .pipe(replace(/\bbwds @version\b/g, `bwds v${pkg.version}`))
       .pipe(dest("dist/css"))
       .pipe(postcss(pluginsMinify))
       .pipe(

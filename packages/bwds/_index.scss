@@ -1,0 +1,55 @@
+/*! bwds @version */
+
+// Global
+// -------------------------------------
+@forward "bwds-global";
+
+// Helpers
+// -------------------------------------
+@forward "bwds-helpers";
+
+// Components
+// -------------------------------------
+@forward "bwds-typography";
+@forward "cob-accordion/src/styles";
+@forward "cob-alert/src/styles";
+@forward "cob-banner/src/styles";
+@forward "cob-breadcrumb/src/styles";
+@forward "cob-button-group/src/styles";
+@forward "cob-button/src/styles";
+@forward "cob-card/src/styles";
+@forward "cob-checklist/src/styles";
+@forward "cob-collection/src/styles";
+@forward "cob-embed-container/src/styles";
+@forward "cob-footer/src/styles";
+@forward "cob-form/src/styles";
+@forward "cob-graphic-list/src/styles";
+@forward "cob-header/src/styles";
+@forward "cob-hero/src/styles";
+@forward "cob-icon-list/src/styles";
+@forward "cob-icon/src/styles";
+@forward "cob-identifier/src/styles";
+@forward "cob-in-page-navigation/src/styles";
+@forward "cob-language-selector/src/styles";
+@forward "cob-layout-docs/src/styles";
+@forward "cob-layout-grid/src/styles";
+@forward "cob-media-block/src/styles";
+@forward "cob-modal/src/styles";
+@forward "cob-nav/src/styles";
+@forward "cob-pagination/src/styles";
+@forward "cob-process-list/src/styles";
+@forward "cob-search/src/styles";
+@forward "cob-section/src/styles";
+@forward "cob-sidenav/src/styles";
+@forward "cob-site-alert/src/styles";
+@forward "cob-skipnav/src/styles";
+@forward "cob-step-indicator/src/styles";
+@forward "cob-summary-box/src/styles";
+@forward "cob-table/src/styles";
+@forward "cob-tag/src/styles";
+@forward "cob-tooltip/src/styles";
+@forward "bwds-form-controls";
+
+// Utilities
+// -------------------------------------
+@forward "bwds-utilities/src/styles";

@@ -1,0 +1,59 @@
+@use "./headings" as *;
+@use "./typeset" as *;
+@use "./cob-list" as *;
+@use "./cob-table-styles" as *;
+
+@mixin cob-paragraph-style {
+  p {
+    @include typeset-p;
+  }
+}
+
+@mixin cob-link-style {
+  a {
+    @include typeset-link;
+  }
+}
+
+@mixin cob-headings-styles {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include typeset-heading;
+  }
+
+  h1 {
+    @include h1;
+  }
+
+  h2 {
+    @include h2;
+  }
+
+  h3 {
+    @include h3;
+  }
+
+  h4 {
+    @include h4;
+  }
+
+  h5 {
+    @include h5;
+  }
+
+  h6 {
+    @include h6;
+  }
+}
+
+@mixin cob-content-styles {
+  @include cob-paragraph-style;
+  @include cob-link-style;
+  @include cob-headings-styles;
+  @include cob-list-styles;
+  @include cob-table-styles;
+}

@@ -1,0 +1,26 @@
+{% if state == "error" %}<div class="cob-form-group cob-form-group--error">{%- endif %}
+  <label class="cob-label{% if state == "error" %} cob-label--error{%- endif %}" for="input-type-text">Text input label</label>
+  {% if state == "error" %} <span class="cob-error-message" id="input-error-message" role="alert">Helpful error message</span>{%- endif %}
+  <input class="cob-input
+    {% if utilities %} {{ utilities }}{% endif %}
+    {% if state == "focus" %} cob-focus{%- endif%}
+    {% if state == "error" %} cob-input--error" aria-describedby="input-error-message{%- endif%}
+    {% if state == "success" %} cob-input--success{%- endif%}"
+    {% if state == "disabled" %} disabled{%- endif%}
+    {% if state == "aria-disabled" %} aria-disabled="true"{%- endif%}
+    id="input-type-text" name="input-type-text" type="text">
+{% if state == "error" %}</div>
+<div class="cob-form-group cob-form-group--error">{%- endif %}
+  <label class="cob-label{% if state == "error" %} cob-label--error{%- endif %}" for="input-type-textarea">Text area label</label>
+  {% if state == "error" %}
+    <span class="cob-error-message" id="textarea-error-message" role="alert">Helpful error message</span>
+  {%- endif %}
+  <textarea class="cob-textarea
+    {% if utilities %} {{ utilities }}{% endif %}
+    {% if state == "focus" %} cob-focus{%- endif%}
+    {% if state == "error" %} cob-input--error" aria-describedby="textarea-error-message{%- endif%}
+    {% if state == "success" %} cob-input--success{%- endif%}"
+    {% if state == "disabled" %} disabled{%- endif%}
+    {% if state == "aria-disabled" %} aria-disabled="true"{%- endif%}
+    id="input-type-textarea" name="input-type-textarea"></textarea>
+{% if state == "error" %}</div>{%- endif %}

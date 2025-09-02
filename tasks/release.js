@@ -7,7 +7,7 @@ const { build } = require("./build");
 
 const hash = crypto.createHash("sha256");
 
-const version = dutil.dirName.replace("@uswds/", "");
+const version = dutil.dirName.replace("@bwds/", "");
 
 // Create a hash from the compiled tgz users can compare and verify
 // their download is authentic.
@@ -47,7 +47,7 @@ function zipArchives(done) {
   // @TODO get data from stdout
   zip.on("close", (code) => {
     if (code === 0) {
-      createHash(`./uswds-${version}.tgz`);
+      createHash(`./bwds-${version}.tgz`);
       done();
     }
   });
@@ -57,7 +57,7 @@ exports.release = series(
   (done) => {
     dutil.logMessage(
       "release",
-      `Creating a tgz archive at ./uswds-${version}.tgz`
+      `Creating a tgz archive at ./bwds-${version}.tgz`
     );
     done();
   },

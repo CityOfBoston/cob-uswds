@@ -1,0 +1,16 @@
+<form class="cob-form">
+  <label class="cob-label" for="cob-range">Range slider</label>
+  <input
+    id="cob-range"
+    class="cob-range"
+    type="range"
+    min="{{ min }}"
+    max="{{ max }}"
+    step="{{ step }}"
+    value="20"
+    {% if text_unit %}data-text-unit="{{ text_unit }}"{%- endif %}
+    {% if text_preposition %}data-text-preposition="{{ text_preposition }}"{%- endif %}
+    {% if disabled_state == 'disabled' %} disabled {%- endif %}
+    {% if disabled_state == 'aria-disabled' %} aria-disabled="true" {%- endif %}
+  >
+</form>

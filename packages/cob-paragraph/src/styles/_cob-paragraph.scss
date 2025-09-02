@@ -1,0 +1,5 @@
+@use "bwds-core" as *;
+
+.cob-paragraph {
+  @include typeset-p;
+}

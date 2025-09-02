@@ -1,0 +1,19 @@
+@use "bwds-core" as *;
+
+.cob-checklist {
+  @include add-list-reset;
+  @include border-box-sizing;
+  @include typeset;
+}
+
+.cob-checklist__item {
+  @include add-checkbox-placeholder;
+  @include u-margin-y(0);
+  margin-bottom: 0;
+  margin-top: units(1);
+
+  // Deprecate cob-checklist__item--checked once the js is updated
+  &.cob-checklist__item--checked {
+    @include add-success-mark;
+  }
+}

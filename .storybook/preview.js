@@ -1,4 +1,4 @@
-import "../packages/uswds-core/src/js/start";
+import "../packages/bwds-core/src/js/start";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

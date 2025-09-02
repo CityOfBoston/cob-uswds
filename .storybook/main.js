@@ -98,7 +98,7 @@ module.exports = {
             options: {
               sourceMap: true,
               sassOptions: {
-                loadPaths: ["./packages", "./node_modules/@uswds"],
+                loadPaths: ["./packages", "./node_modules/@bwds"],
                 implementation: require("sass-embedded"),
               },
             },
@@ -129,7 +129,7 @@ module.exports = {
         },
         include: path.resolve(
           __dirname,
-          "../packages/uswds-core/src/assets/fonts",
+          "../packages/bwds-core/src/assets/fonts",
         ),
       },
     );

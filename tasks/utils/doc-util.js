@@ -25,7 +25,7 @@ module.exports = {
   dirName: `${pkg.name}-${pkg.version}`,
 
   logIntroduction(message) {
-    const introMessage = message || "USWDS";
+    const introMessage = message || "BWDS";
     log(colors.yellow(`${introMessage} v${pkg.version}`));
     drawFlag();
   },

@@ -1,0 +1,217 @@
+@use "bwds-core" as *;
+
+[type="file"] {
+  border: none;
+  margin-top: units(1);
+  padding-left: 0;
+  padding-top: 0.2rem; // keeps input vertically centered on error state
+}
+
+.cob-file-input {
+  display: block;
+  max-width: units($theme-input-max-width);
+  width: 100%;
+}
+
+.cob-file-input__target {
+  border: 1px dashed color("base-light");
+  display: block;
+  font-size: size("body", "2xs");
+  margin-top: units(1);
+  position: relative;
+  text-align: center;
+  width: 100%;
+
+  &:hover {
+    border-color: color("base");
+  }
+}
+
+.cob-file-input__target.has-invalid-file {
+  border-color: color("accent-warm");
+}
+
+.cob-file-input__accepted-files-message {
+  font-weight: bold;
+  margin: units(-3) 0 units(3);
+  pointer-events: none;
+  position: relative;
+  z-index: 3;
+}
+
+.has-invalid-file .cob-file-input__accepted-files-message {
+  color: color("secondary-dark");
+}
+
+.cob-file-input__choose {
+  @include typeset-link;
+  font-weight: normal;
+}
+
+.cob-file-input__instructions {
+  padding: units(4) units(2);
+  pointer-events: none;
+  position: relative;
+  z-index: 3;
+}
+
+.cob-file-input__box {
+  background: white;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.cob-file-input .cob-file-input__input[type] {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  max-width: none;
+  position: absolute;
+  padding: units(1);
+  text-indent: -999em;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.cob-file-input .cob-file-input__input[type]::-webkit-file-upload-button {
+  display: none;
+}
+
+.cob-file-input--drag .cob-file-input__target {
+  border-color: color("primary");
+}
+
+.cob-file-input--drag .cob-file-input__box {
+  background-color: color("primary-lighter");
+}
+
+.cob-file-input--drag .cob-file-input__preview {
+  opacity: 0.1;
+}
+
+.cob-file-input__preview-heading {
+  align-items: center;
+  background: color("primary-lighter");
+  display: flex;
+  font-weight: bold;
+  justify-content: space-between;
+  padding: units(1);
+  pointer-events: none;
+  position: relative;
+  z-index: 3;
+}
+
+.cob-file-input__preview {
+  align-items: center;
+  background: color("primary-lighter");
+  word-wrap: anywhere;
+  display: flex;
+  font-size: size("body", "3xs");
+  margin-top: units(1px);
+  padding: units(0.5) units(1);
+  pointer-events: none;
+  position: relative;
+  text-align: left;
+  z-index: 3;
+
+  &:last-child {
+    margin-bottom: units(-3);
+  }
+}
+
+.cob-file-input__preview-image {
+  border: none;
+  display: block;
+  height: units(5);
+  margin-right: units(1);
+  object-fit: contain;
+  width: units(5);
+}
+
+.cob-file-input__preview-image.is-loading {
+  @include add-background-svg("loader");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: units(4);
+}
+
+.cob-file-input__preview-image--generic,
+.cob-file-input__preview-image--pdf,
+.cob-file-input__preview-image--word,
+.cob-file-input__preview-image--excel,
+.cob-file-input__preview-image--video {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: units(3);
+}
+
+.cob-file-input__preview-image--pdf {
+  @include add-background-svg("file-pdf");
+}
+
+.cob-file-input__preview-image--generic {
+  @include add-background-svg("file");
+}
+
+.cob-file-input__preview-image--word {
+  @include add-background-svg("file-word");
+}
+
+.cob-file-input__preview-image--excel {
+  @include add-background-svg("file-excel");
+}
+
+.cob-file-input__preview-image--video {
+  @include add-background-svg("file-video");
+}
+
+// Error states
+.cob-form-group--error .cob-file-input__target {
+  border-color: color("secondary-dark");
+  border-width: 2px;
+}
+
+// Disabled state
+.cob-file-input--disabled {
+  .cob-file-input__instructions,
+  .cob-file-input__choose {
+    @include set-text-from-bg("disabled-lighter", "disabled-dark");
+  }
+
+  .cob-file-input__box {
+    background-color: color("disabled-lighter");
+  }
+
+  .cob-file-input__input[type] {
+    cursor: not-allowed;
+  }
+
+  .cob-file-input__target {
+    &:hover {
+      border-color: color("base-light");
+    }
+  }
+
+  .cob-file-input--drag .cob-file-input__box {
+    background-color: color("disabled-lighter");
+  }
+
+  @media (forced-colors: active) {
+    .cob-file-input__instructions,
+    .cob-file-input__choose {
+      color: color(GrayText);
+    }
+
+    .cob-file-input__target,
+    .cob-file-input__target:hover {
+      border-color: color(GrayText);
+    }
+  }
+}

@@ -1,0 +1,5 @@
+<div class="cob-language-container">
+  <button type="button" class="cob-button{{ focus ? " cob-focus" }}" {% if role %} role="{{ role }}" {% endif %}>
+    <span lang="{{ lang }}" xml:lang="{{ lang }}">{{ label | default('Español') }}</span>
+  </button>
+</div>

@@ -1,0 +1,10 @@
+<div class="cob-alert {{ modifier }}" {% if role %}role="{{ role }}"{% endif %}>
+  <div class="cob-alert__body">
+    {%- if title %}
+      <h4 class="cob-alert__heading">{{ title }}</h4>
+    {%- endif %}
+    <p class="cob-alert__text">
+      {{ text }}
+    </p>
+  </div>
+</div>

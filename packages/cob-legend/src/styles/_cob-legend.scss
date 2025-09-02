@@ -1,0 +1,11 @@
+@use "bwds-core" as *;
+
+.cob-legend {
+  @include add-label-styles;
+}
+
+.cob-legend--large {
+  font-size: font-size($theme-form-font-family, "xl");
+  font-weight: font-weight("bold");
+  margin-top: units(2);
+}

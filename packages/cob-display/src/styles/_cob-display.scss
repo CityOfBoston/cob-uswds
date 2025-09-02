@@ -1,0 +1,14 @@
+@use "bwds-core" as *;
+
+.cob-display {
+  @include typeset-h3;
+  margin-bottom: 0;
+
+  @include at-media("mobile-lg") {
+    @include typeset-h1;
+  }
+
+  @include at-media("tablet") {
+    @include typeset-display;
+  }
+}

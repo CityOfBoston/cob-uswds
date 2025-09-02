@@ -14,10 +14,10 @@ const dutil = require("./utils/doc-util");
 module.exports = {
   compileJS() {
     dutil.logMessage("javascript", "Compiling JavaScript");
-    let packageName = dutil.pkg.name.replace("@uswds/", "");
+    let packageName = dutil.pkg.name.replace("@bwds/", "");
     const streams = Object.entries({
       [packageName]: browserify({
-        entries: ["packages/uswds-core/src/js/start.js"],
+        entries: ["packages/bwds-core/src/js/start.js"],
         debug: true,
       })
         .transform("babelify", {
@@ -27,7 +27,7 @@ module.exports = {
         .bundle()
         .pipe(source(`${packageName}.js`))
         .pipe(buffer()),
-      "uswds-init": src("packages/uswds-core/src/js/uswds-init.js"),
+      "bwds-init": src("packages/bwds-core/src/js/bwds-init.js"),
     }).map(([basename, stream]) =>
       stream
         .pipe(rename({ basename }))

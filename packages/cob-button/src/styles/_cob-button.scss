@@ -1,0 +1,268 @@
+@use "bwds-core" as *;
+
+// Buttons variables
+
+$button-context: "Button";
+$button-stroke: inset 0 0 0 units($theme-button-stroke-width);
+
+// Buttons
+.cob-button {
+  @include border-box-sizing;
+  @include typeset("ui", null, 1);
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  background-color: color("color-bg-action");
+  color: color("color-neutral-white");
+  appearance: none;
+  align-items: center;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  column-gap: units($theme-button-icon-gap);
+  display: inline-flex;
+  font-weight: font-weight("bold");
+  justify-content: center;
+  margin-right: units(1);
+  padding: units(1.5) units(2.5);
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+
+  @include at-media("mobile-lg") {
+    width: auto;
+  }
+
+  &:visited {
+    color: color("color-neutral-white");
+  }
+
+  &:hover,
+  &.cob-button--hover {
+    background-color: color("color-bg-action-hover");
+    color: color("color-neutral-white");
+    border-bottom: 0;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.cob-button--active {
+    background-color: color("color-bg-action-hover");
+    color: color("color-neutral-white");
+  }
+
+  &:not([disabled]):focus,
+  &:not([disabled]).cob-focus {
+    background-color: color("color-bg-action");
+    color: color("color-neutral-white");
+    outline-offset: units(0.5);
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: color("color-bg-disabled");
+    color: color("color-text-disabled");
+    cursor: not-allowed;
+  }
+
+  .cob-icon {
+    flex-shrink: 0; // Avoid shrinking on small screens.
+    width: 1.25em;
+    height: 1.25em;
+    margin: 0 0.25em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @media (forced-colors: active) {
+    &:not(.cob-button--unstyled) {
+      border: $border-high-contrast;
+    }
+  }
+}
+
+.cob-button--accent-cool {
+  @include set-text-and-bg("accent-cool", $context: $button-context);
+
+  &:visited {
+    @include set-text-and-bg("accent-cool", $context: $button-context);
+  }
+
+  &:hover,
+  &.cob-button--hover {
+    @include set-text-and-bg("accent-cool-dark", $context: $button-context);
+  }
+
+  &:active,
+  &.cob-button--active {
+    @include set-text-and-bg("accent-cool-darker", $context: $button-context);
+  }
+}
+
+.cob-button--accent-warm {
+  @include set-text-and-bg("accent-warm", $context: $button-context);
+
+  &:visited {
+    @include set-text-and-bg("accent-warm", $context: $button-context);
+  }
+
+  &:hover,
+  &.cob-button--hover {
+    @include set-text-and-bg("accent-warm-dark", $context: $button-context);
+  }
+
+  &:active,
+  &.cob-button--active {
+    @include set-text-and-bg("accent-warm-darker", $context: $button-context);
+  }
+}
+
+.cob-button--outline {
+  background-color: transparent;
+  box-shadow: $button-stroke color("color-text-action");
+  color: color("color-text-action");
+
+  &:visited {
+    color: color("color-text-action");
+  }
+
+  &:hover,
+  &.cob-button--hover {
+    background-color: transparent;
+    box-shadow: $button-stroke color("color-text-action");
+    color: color("color-text-action");
+    border-bottom: 0;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.cob-button--active {
+    background-color: transparent;
+    box-shadow: $button-stroke color("color-text-action");
+    color: color("color-text-action");
+  }
+
+  &:not([disabled]):focus,
+  &:not([disabled]).cob-focus {
+    background-color: transparent;
+    box-shadow: $button-stroke color("color-text-action");
+    color: color("color-text-action");
+    outline-offset: units(0.5);
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: transparent;
+    box-shadow: $button-stroke color("color-text-disabled");
+    color: color("color-text-disabled");
+    cursor: not-allowed;
+  }
+}
+
+.cob-button--base {
+  @include set-text-and-bg("base", $context: $button-context);
+
+  &:hover,
+  &.cob-button--hover {
+    @include set-text-and-bg("base-dark", $context: $button-context);
+  }
+
+  &:active,
+  &.cob-button--active {
+    @include set-text-and-bg("base-darker", $context: $button-context);
+  }
+}
+
+.cob-button--secondary {
+  @include set-text-and-bg("secondary", $context: $button-context);
+
+  &:hover,
+  &.cob-button--hover {
+    @include set-text-and-bg("secondary-dark", $context: $button-context);
+  }
+
+  &:active,
+  &.cob-button--active {
+    @include set-text-and-bg("secondary-darker", $context: $button-context);
+  }
+}
+
+.cob-button--big {
+  border-radius: 0;
+  font-size: font-size($theme-button-font-family, "lg");
+  padding: units(2) units(3);
+}
+
+// Cannot use disabled mixin due to transparent causing build errors with color grade check.
+.cob-button--outline:disabled,
+.cob-button--outline[aria-disabled="true"],
+.cob-button--outline-inverse:disabled,
+.cob-button--outline-inverse[aria-disabled="true"] {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: transparent;
+    color: color("disabled");
+  }
+}
+
+.cob-button--outline:disabled,
+.cob-button--outline[aria-disabled="true"] {
+  box-shadow: $button-stroke color("disabled-lighter");
+
+  &.cob-button--inverse {
+    box-shadow: $button-stroke color("disabled-light");
+    color: color("disabled-light");
+
+    @media (forced-colors: active) {
+      color: color(GrayText);
+    }
+  }
+}
+
+.cob-button--transparent {
+  background-color: transparent;
+  color: color("color-text-action");
+
+  &:visited {
+    color: color("color-text-action");
+  }
+
+  &:hover,
+  &.cob-button--hover {
+    background-color: color("color-bg-information");
+    color: color("color-text-action");
+    border-bottom: 0;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.cob-button--active {
+    background-color: color("color-bg-information");
+    color: color("color-text-action");
+  }
+
+  &:not([disabled]):focus,
+  &:not([disabled]).cob-focus {
+    background-color: transparent;
+    color: color("color-text-action");
+    outline-offset: units(0.5);
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: transparent;
+    color: color("color-text-disabled");
+    cursor: not-allowed;
+  }
+}
+
+.cob-button--unstyled {
+  @include button-unstyled;
+}

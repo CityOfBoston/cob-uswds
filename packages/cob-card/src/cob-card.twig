@@ -1,0 +1,39 @@
+{% set card_classes = 'cob-card ' ~ modifier|default('') %}
+{% set image_fallback = 'https://designsystem.digital.gov/img/introducing-bwds-2-0/built-to-grow--alt.jpg' %}
+
+<ul class="cob-card-group">
+  {% for card in cards %}
+    {# Card overrides configure individual settings like grid classes, header placement, and direction of image for flags. #}
+    {% set card_overrides = [
+      card.classes_override|default(default_classes),
+      (card.header_first ? 'cob-card--header-first' : ''),
+      ((card.flag_direction == 'right') ? 'cob-card--media-right' : '')
+    ] %}
+
+    <li class="{{ card_classes ~ " " ~ card_overrides|join(' ') }}">
+      <div class="cob-card__container {{ card.container_overrides|default('') }}">
+        <div class="cob-card__header">
+          <h2 class="cob-card__heading">{{ card.title }}</h2>
+        </div>
+
+        {% if card.media %}
+          {% set media = card.media %}
+          <div class="cob-card__media {{ media.media_classes|default('') }}">
+            <div class="cob-card__img {{ media.image_classes|default('') }}">
+              <img src="{{ media.image_src|default(image_fallback) }}" alt="{{ media.image_alt_text|default('A placeholder image') }}">
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="cob-card__body {{ card.body_overrides }}">
+          {% if card.content %}
+            <p>{{ card.content | raw }}</p>
+          {% endif %}
+        </div>
+        <div class="cob-card__footer">
+          <a href="#" class="cob-button">Visit Florida Keys</a>
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+</ul>

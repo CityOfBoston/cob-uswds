@@ -1,0 +1,31 @@
+/*
+========================================
+left
+----------------------------------------
+cobge:
+  .left-[key]
+----------------------------------------
+output:
+  left: [value];
+----------------------------------------
+example:
+  .left-neg-2px {
+    left: -2px;
+  }
+----------------------------------------
+*/
+
+@use "bwds-core/src/styles/settings" as *;
+@use "bwds-core/src/styles/functions" as *;
+@use "../functions/" as *;
+
+$u-left: (
+  left: (
+    base: "left",
+    modifiers: null,
+    values: map-collect(get-palettes($left-palettes), $left-manual-values),
+    settings: $left-settings-complete,
+    property: "left",
+    type: "utility",
+  ),
+);

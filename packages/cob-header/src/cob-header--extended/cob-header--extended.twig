@@ -1,0 +1,10 @@
+<div class="cob-overlay"></div>
+<header class="cob-header {{ modifier }}">
+  {% include "@components/cob-header/src/_includes/cob-navbar.twig" %}
+  <nav aria-label="{{ nav.aria_label }}" class="cob-nav">
+    <div class="cob-nav__inner">
+      {% include "@components/cob-nav/src/cob-nav__primary/cob-nav__primary.twig" %}
+      {% include "@components/cob-nav/src/cob-nav__secondary/cob-nav__secondary.twig" with navSecondaryContent %}
+    </div>
+  </nav>
+</header>

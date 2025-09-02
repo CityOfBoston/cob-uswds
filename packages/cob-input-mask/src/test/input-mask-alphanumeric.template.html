@@ -1,0 +1,22 @@
+<div class="cob-input-masking">
+  <h3 class="site-preview-heading">Alphanumeric Input Mask</h3>
+  <label class="cob-label" for="zip">Alphanumeric example</label>
+  <div class="cob-hint" id="alphanumericHint">For example, A1B 2C3</div>
+  <span class="cob-input-mask" data-mask="___ ___">
+    <span class="cob-input-mask--content test" aria-hidden="true" id="alphanumericMask"
+      >___ ___</span
+    >
+    <input
+      id="alphanumeric"
+      type="text"
+      inputmode="text"
+      name="alphanumeric"
+      pattern="\w\d\w \d\w\d"
+      class="cob-input cob-masked"
+      aria-describedby="alphanumericHint"
+      maxlength="10"
+      data-placeholder="___ ___"
+      data-charset="A#A #A#"
+    />
+  </span>
+</div>

@@ -1,0 +1,18 @@
+<section class="cob-site-alert {{ modifier }}" aria-label="{{ aria_label }}">
+  <div class="cob-alert">
+    <div class="cob-alert__body">
+      {%- if title %}
+        <h3 class="cob-alert__heading">{{ title }}</h3>
+      {%- endif %}
+
+      {%- if list %}
+        {{ list|raw }}
+      {%- endif %}
+
+      {%- if text %}
+        <p class="cob-alert__text">{{ text|raw }}</p>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+

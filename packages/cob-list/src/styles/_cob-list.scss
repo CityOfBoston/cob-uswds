@@ -1,0 +1,16 @@
+@use "bwds-core" as *;
+
+.cob-list {
+  @include cob-list;
+
+  li {
+    @include cob-list-item;
+  }
+}
+
+// Unstyled lists
+@include override-prose {
+  .cob-list--unstyled {
+    @include unstyled-list;
+  }
+}

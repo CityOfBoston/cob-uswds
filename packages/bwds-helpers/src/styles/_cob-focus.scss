@@ -1,0 +1,5 @@
+@use "bwds-core/src/styles/mixins/general/focus-outline" as *;
+
+.cob-focus {
+  @include focus-outline;
+}

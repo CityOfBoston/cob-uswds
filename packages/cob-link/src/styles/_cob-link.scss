@@ -1,0 +1,17 @@
+@use "bwds-core" as *;
+
+.cob-link {
+  @include typeset-link;
+}
+
+// External link consider 'effortless style approach':
+// [href^='http:']:not([href*='my-domain.com'])
+// [href^='https:']:not([href*='my-domain.com'])
+
+.cob-link--external {
+  @include external-link();
+
+  &.cob-link--alt {
+    @include external-link($contrast-bg: "base-darker");
+  }
+}

@@ -1,0 +1,16 @@
+{# Shared text for Alert and Site alert. #}
+{% set text = "Lorem ipsum dolor sit amet sed do eiusmod." %}
+
+{% include '@components/cob-banner/src/cob-banner.twig' %}
+
+{% for alert in alerts %}
+  <h3>{{ alert.header }}</h3>
+  {% include '@components/cob-alert/src/cob-alert.twig' with alert %}
+{% endfor %}
+
+{% for siteAlert in siteAlerts %}
+  <h3>{{ siteAlert.header }}</h3>
+  {% include '@components/cob-site-alert/src/cob-site-alert.twig' with siteAlert %}
+{% endfor %}
+
+{% include '@components/cob-footer/src/cob-footer.twig' with footer %}

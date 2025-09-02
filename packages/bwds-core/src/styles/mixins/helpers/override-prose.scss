@@ -1,0 +1,6 @@
+@mixin override-prose {
+  @content;
+  .cob-prose {
+    @content;
+  }
+}

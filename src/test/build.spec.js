@@ -2,23 +2,23 @@ const assert = require("assert");
 const fs = require("fs");
 const path = require("path");
 const pkg = require("../../package.json");
-const { runGulp, distCssPath } = require("../../packages/uswds-core/src/js/utils/test/util");
+const { runGulp, distCssPath } = require("../../packages/bwds-core/src/js/utils/test/util");
 
 before(() => {
   setTimeout(() => runGulp("sass"), 20000);
 });
 
 describe("build output", () => {
-  it("generates CSS at dist/css/uswds.css", () => {
-    const distFilename = path.join(distCssPath, "uswds.css");
+  it("generates CSS at dist/css/bwds.css", () => {
+    const distFilename = path.join(distCssPath, "bwds.css");
     assert.ok(
       fs.existsSync(distFilename),
       `the file does not exist:  ${distFilename}`
     );
   });
 
-  it("generates minified CSS at dist/css/uswds.min.css", () => {
-    const distFilename = path.join(distCssPath, "uswds.min.css");
+  it("generates minified CSS at dist/css/bwds.min.css", () => {
+    const distFilename = path.join(distCssPath, "bwds.min.css");
     assert.ok(
       fs.existsSync(distFilename),
       `the file does not exist:  ${distFilename}`
@@ -27,7 +27,7 @@ describe("build output", () => {
 });
 
 describe("version output", () => {
-  const versionString = `/*! uswds v${pkg.version} */`;
+  const versionString = `/*! bwds v${pkg.version} */`;
 
   /* eslint-disable */
   const checkVersion = (filename, done) =>
@@ -47,13 +47,13 @@ describe("version output", () => {
     });
   /* eslint-enable */
 
-  it("includes the current version text in uswds.css", () => {
-    const distFilename = path.join(distCssPath, "uswds.css");
+  it("includes the current version text in bwds.css", () => {
+    const distFilename = path.join(distCssPath, "bwds.css");
     return checkVersion(distFilename);
   });
 
-  it("includes the current version text in uswds.min.css", () => {
-    const distFilename = path.join(distCssPath, "uswds.min.css");
+  it("includes the current version text in bwds.min.css", () => {
+    const distFilename = path.join(distCssPath, "bwds.min.css");
     return checkVersion(distFilename);
   });
 });

@@ -1,0 +1,9 @@
+@use "bwds-core" as *;
+
+.cob-content {
+  p,
+  ul:not(.cob-accordion):not(.cob-accordion--bordered),
+  ol:not(.cob-accordion):not(.cob-accordion--bordered) {
+    max-width: measure($theme-text-measure);
+  }
+}

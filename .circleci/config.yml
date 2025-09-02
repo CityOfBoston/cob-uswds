@@ -13,7 +13,7 @@ references:
   restore_deps: &restore_deps
     restore_cache:
       keys:
-        - v2-uswds-dependencies-{{ checksum "package-lock.json" }}
+        - v2-bwds-dependencies-{{ checksum "package-lock.json" }}
 
 jobs:
   build:
@@ -22,15 +22,15 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v2-uswds-dependencies-{{ checksum "package-lock.json" }}
+            - v2-bwds-dependencies-{{ checksum "package-lock.json" }}
       - run: npm install
       - run: npx playwright install
       - save_cache:
           paths:
             - node_modules
-          key: v2-uswds-dependencies-{{ checksum "package-lock.json" }}
+          key: v2-bwds-dependencies-{{ checksum "package-lock.json" }}
       - snyk/scan:
-          organization: uswds
+          organization: bwds
       - run:
           name: Run test
           command: npm run test:ci
@@ -44,11 +44,11 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v2-uswds-dependencies-{{ checksum "package-lock.json" }}
+            - v2-bwds-dependencies-{{ checksum "package-lock.json" }}
       - run: npm install --ignore-scripts
       - run: npm rebuild node-sass
       - run:
-          name: Build the USWDS package
+          name: Build the BWDS package
           command: npm run build
       - run:
           name: Publish to NPM
@@ -62,7 +62,7 @@ jobs:
       - run: npm install --ignore-scripts
       - run: npm rebuild node-sass
       - run:
-          name: Build the USWDS package
+          name: Build the BWDS package
           command: npm run build
       - run:
           name: Publish to NPM with `alpha` tag
@@ -76,7 +76,7 @@ jobs:
       - run: npm install --ignore-scripts
       - run: npm rebuild node-sass
       - run:
-          name: Build the USWDS package
+          name: Build the BWDS package
           command: npm run build
       - run:
           name: Publish to NPM with `beta` tag
@@ -85,7 +85,7 @@ jobs:
             npm publish --access public --tag beta
 workflows:
   version: 2
-  circle-uswds:
+  circle-bwds:
     jobs:
       - build
       - deploy:

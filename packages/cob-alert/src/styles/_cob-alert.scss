@@ -1,0 +1,60 @@
+@use "sass:math";
+
+@use "bwds-core" as *;
+
+// Alert variables ---------- //
+$alert-icons: (
+  success: "check_circle",
+  warning: "warning",
+  error: "error",
+  info: "info",
+  emergency: "error",
+);
+
+.cob-alert {
+  @include alert-styles;
+
+  .cob-alert__body {
+    @include u-padding-x($theme-alert-padding-x);
+
+    &::before {
+      left: calc(
+        units($theme-alert-padding-x) + $alert-icon-optical-adjust-left
+      );
+    }
+  }
+
+  * + & {
+    margin-top: units(2);
+  }
+}
+
+@each $name, $icon in $alert-icons {
+  .cob-alert--#{$name} {
+    @include alert-status-wrapper-styles($name);
+
+    .cob-alert__body {
+      @include alert-status-body-styles($name, $icon);
+    }
+  }
+}
+
+.cob-alert--slim {
+  @include alert-styles-slim;
+
+  .cob-alert__body::before {
+    left: calc(
+      units($theme-alert-padding-x) + $alert-slim-icon-optical-adjust-left
+    );
+  }
+}
+
+.cob-alert--no-icon {
+  @include alert-styles-no-icon;
+}
+
+.cob-alert--validation {
+  .cob-checklist {
+    margin-top: units(2);
+  }
+}

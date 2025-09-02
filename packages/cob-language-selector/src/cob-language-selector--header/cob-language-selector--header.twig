@@ -1,0 +1,80 @@
+<div class="cob-overlay"></div>
+<header class="cob-header cob-header--basic {{ modifier }}">
+  <div class="cob-nav-container">
+
+    <div class="cob-navbar">
+      {% include "@components/cob-site-title/src/cob-site-title.twig" %}
+
+      <div class="cob-language-container cob-language--small display-block desktop:display-none">
+        <ul class="cob-language__primary cob-accordion">
+          <li class="cob-language__primary-item">
+            <button type="button" class="cob-button cob-button--unstyled cob-language__link{{ focus ? " cob-focus" }}" {% if role %} role="{{ role }}" {% endif %} aria-expanded="false" aria-controls="language-options-mobile">
+              {{ label | default('Languages') }}
+            </button>
+            {% if languages %}
+              <ul id="language-options-mobile" class="cob-language__submenu" hidden="true">
+                {% for language in languages %}
+                  <li class="cob-language__submenu-item">
+                    <a href="{{ placeholder_link }}">
+                      {% if language.lang_label %}
+                        <span lang="{{ language.lang_att }}" xml:lang="{{ language.lang_att }}">
+                          <strong>{{ language.lang_label }}</strong>
+                          {{ language.lang_label_en }}
+                        </span>
+                      {% endif %}
+                    </a>
+                  </li>
+                {% endfor %}
+                <li class="cob-language__submenu-item">
+                  <a href="{{ placeholder_link }}">{{ more }}</a>
+                </li>
+              </ul>
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+
+      {% if nav %}
+        <button class="cob-menu-btn">
+          {{ nav.menu.label | default('Menu') }}
+        </button>
+      {% endif %}
+    </div>
+
+    {% if nav %}
+      <nav aria-label="{{ nav.aria_label }}" class="cob-nav">
+        {% include "@components/cob-nav/src/cob-nav__primary/cob-nav__primary.twig" %}
+        {% include "@components/cob-search/src/cob-search.twig" with search.settings %}
+      </nav>
+    {% endif %}
+
+    <div class="cob-language-container cob-language--small display-none desktop:display-block">
+      <ul class="cob-language__primary cob-accordion">
+        <li class="cob-language__primary-item">
+          <button type="button" class="cob-button cob-language__link{{ focus ? " cob-focus" }}" {% if role %} role="{{ role }}" {% endif %} aria-expanded="false" aria-controls="language-options">
+            {{ label | default('Languages') }}
+          </button>
+          {% if languages %}
+            <ul id="language-options" class="cob-language__submenu" hidden="true">
+              {% for language in languages %}
+                <li class="cob-language__submenu-item">
+                  <a href="{{ placeholder_link }}">
+                    {% if language.lang_label %}
+                      <span lang="{{ language.lang_att }}" xml:lang="{{ language.lang_att }}">
+                        <strong>{{ language.lang_label }}</strong>
+                        {{ language.lang_label_en }}
+                      </span>
+                    {% endif %}
+                  </a>
+                </li>
+              {% endfor %}
+              <li class="cob-language__submenu-item">
+                <a href="{{ placeholder_link }}">{{ more }}</a>
+              </li>
+            </ul>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

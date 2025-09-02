@@ -1,0 +1,9 @@
+@use "bwds-core/src/styles/mixins/general/media-link" as *;
+
+img {
+  max-width: 100%;
+}
+
+.cob-media-link {
+  @include media-link;
+}

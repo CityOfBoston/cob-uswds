@@ -1,0 +1,11 @@
+<div class="cob-navbar">
+  {% include "@components/cob-site-title/src/cob-site-title.twig" with {
+    'site_title': '<Project title>'
+    }
+  %}
+  {% if nav %}
+    <button type="button" class="cob-menu-btn">
+      {{ nav.menu.label | default('Menu') }}
+    </button>
+  {% endif %}
+</div>

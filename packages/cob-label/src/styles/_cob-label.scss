@@ -1,0 +1,14 @@
+@use "bwds-core" as *;
+
+.cob-label {
+  @include add-label-styles;
+}
+
+.cob-label--error {
+  font-weight: font-weight("bold");
+  margin-top: 0;
+}
+
+.cob-label--required {
+  color: color("error-dark");
+}

@@ -1,0 +1,255 @@
+/*
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+* * * * * ==============================
+========================================
+========================================
+========================================
+----------------------------------------
+COLOR SETTINGS
+----------------------------------------
+Read more about settings and
+BWDS color tokens in the documentation:
+https://designsystem.digital.gov/design-tokens/color
+----------------------------------------
+*/
+
+$test-system-color-tokens: false !default;
+
+/*
+----------------------------------------
+Theme palette colors
+----------------------------------------
+*/
+
+// Base colors
+$theme-color-base-family: "gray-cool" !default;
+$theme-color-base-lightest: "gray-5" !default;
+$theme-color-base-lighter: "gray-cool-10" !default;
+$theme-color-base-light: "gray-cool-30" !default;
+$theme-color-base: "gray-cool-50" !default;
+$theme-color-base-dark: "gray-cool-60" !default;
+$theme-color-base-darker: "gray-cool-70" !default;
+$theme-color-base-darkest: "gray-90" !default;
+$theme-color-base-ink: "gray-90" !default;
+
+// Primary colors
+$theme-color-primary-family: "blue" !default;
+$theme-color-primary-lightest: false !default;
+$theme-color-primary-lighter: "blue-10" !default;
+$theme-color-primary-light: "blue-30" !default;
+$theme-color-primary: "blue-60v" !default;
+$theme-color-primary-vivid: "blue-warm-60v" !default;
+$theme-color-primary-dark: "blue-warm-70v" !default;
+$theme-color-primary-darker: "blue-warm-80v" !default;
+$theme-color-primary-darkest: false !default;
+
+// Secondary colors
+$theme-color-secondary-family: "red" !default;
+$theme-color-secondary-lightest: false !default;
+$theme-color-secondary-lighter: "red-cool-10" !default;
+$theme-color-secondary-light: "red-30" !default;
+$theme-color-secondary: "red-50" !default;
+$theme-color-secondary-vivid: "red-cool-50v" !default;
+$theme-color-secondary-dark: "red-60v" !default;
+$theme-color-secondary-darker: "red-70v" !default;
+$theme-color-secondary-darkest: false !default;
+
+// Accent warm colors
+$theme-color-accent-warm-family: "orange" !default;
+$theme-color-accent-warm-lightest: false !default;
+$theme-color-accent-warm-lighter: "orange-10" !default;
+$theme-color-accent-warm-light: "orange-20v" !default;
+$theme-color-accent-warm: "orange-30v" !default;
+$theme-color-accent-warm-dark: "orange-50v" !default;
+$theme-color-accent-warm-darker: "orange-60" !default;
+$theme-color-accent-warm-darkest: false !default;
+
+// Accent cool colors
+$theme-color-accent-cool-family: "blue-cool" !default;
+$theme-color-accent-cool-lightest: false !default;
+$theme-color-accent-cool-lighter: "blue-cool-5v" !default;
+$theme-color-accent-cool-light: "blue-cool-20v" !default;
+$theme-color-accent-cool: "cyan-30v" !default;
+$theme-color-accent-cool-dark: "blue-cool-40v" !default;
+$theme-color-accent-cool-darker: "blue-cool-60v" !default;
+$theme-color-accent-cool-darkest: false !default;
+
+/*
+----------------------------------------
+State palette colors
+----------------------------------------
+*/
+
+// Error colors
+$theme-color-error-family: "red-warm" !default;
+$theme-color-error-lighter: "red-warm-10" !default;
+$theme-color-error-light: "red-warm-30v" !default;
+$theme-color-error: "red-warm-50v" !default;
+$theme-color-error-dark: "red-60v" !default;
+$theme-color-error-darker: "red-70" !default;
+
+// Warning colors
+$theme-color-warning-family: "gold" !default;
+$theme-color-warning-lighter: "yellow-5" !default;
+$theme-color-warning-light: "yellow-10v" !default;
+$theme-color-warning: "gold-20v" !default;
+$theme-color-warning-dark: "gold-30v" !default;
+$theme-color-warning-darker: "gold-50v" !default;
+
+// Success colors
+$theme-color-success-family: "green-cool" !default;
+$theme-color-success-lighter: "green-cool-5" !default;
+$theme-color-success-light: "green-cool-20v" !default;
+$theme-color-success: "green-cool-40v" !default;
+$theme-color-success-dark: "green-cool-50v" !default;
+$theme-color-success-darker: "green-cool-60v" !default;
+
+// Info colors
+$theme-color-info-family: "cyan" !default;
+$theme-color-info-lighter: "cyan-5" !default;
+$theme-color-info-light: "cyan-20" !default;
+$theme-color-info: "cyan-30v" !default;
+$theme-color-info-dark: "cyan-40v" !default;
+$theme-color-info-darker: "blue-cool-60" !default;
+
+// Disabled colors
+$theme-color-disabled-family: "gray" !default;
+$theme-color-disabled-lighter: "gray-20" !default;
+$theme-color-disabled-light: "gray-40" !default;
+$theme-color-disabled: "gray-50" !default;
+$theme-color-disabled-dark: "gray-70" !default;
+$theme-color-disabled-darker: "gray-90" !default;
+
+// Emergency colors
+$theme-color-emergency: "red-warm-60v" !default;
+$theme-color-emergency-dark: "red-warm-80" !default;
+
+/*
+----------------------------------------
+General colors
+----------------------------------------
+*/
+
+// Body
+$theme-body-background-color: "white" !default;
+
+// Text
+$theme-text-color: "ink" !default;
+$theme-text-reverse-color: "white" !default;
+
+// Links
+$theme-link-color: "primary" !default;
+$theme-link-visited-color: "violet-70v" !default;
+$theme-link-hover-color: "primary-dark" !default;
+$theme-link-active-color: "primary-darker" !default;
+$theme-link-reverse-color: "base-lighter" !default;
+$theme-link-reverse-hover-color: "base-lightest" !default;
+$theme-link-reverse-active-color: "white" !default;
+
+/*
+----------------------------------------
+BWDS colors
+----------------------------------------
+*/
+
+$color-charles-blue: #091F2F !default;
+$color-optimistic-blue: #1871bd !default;
+$color-freedom-trail-red: #FB4D42 !default;
+$color-snow-white: #FFFFFF !default;
+
+// Primary colors
+$color-primary-lightest: "blue-100" !default;
+$color-primary-light: "blue-300" !default;
+$color-primary: "blue-500" !default;
+$color-primary-dark: "blue-600" !default;
+$color-primary-darkest: "blue-700" !default;
+
+// Secondary colors
+$color-secondary-lightest: "red-100" !default;
+$color-secondary-light: "red-300" !default;
+$color-secondary: "red-400" !default;
+$color-secondary-dark: "red-600" !default;
+$color-secondary-darkest: "red-700" !default;
+
+// Neutral colors
+$color-neutral-white: "white" !default;
+$color-neutral-lightest: "gray-100" !default;
+$color-neutral-light: "gray-200" !default;
+$color-neutral: "gray-400" !default;
+$color-neutral-dark: "gray-500" !default;
+$color-neutral-darkest: "gray-600" !default;
+$color-neutral-ink: "gray-700" !default;
+
+// Success colors
+$color-success-light: "green-100" !default;
+$color-success-medium: "green-500" !default;
+$color-success-dark: "green-700" !default;
+$color-success-darkest: "gray-600" !default;
+
+// Warning colors
+$color-warning-light: "gold-100" !default;
+$color-warning-medium: "gold-500" !default;
+$color-warning-dark: "gold-700" !default;
+$color-warning-darkest: "gray-600" !default;
+
+// Error colors
+$color-error-light: "red-100" !default;
+$color-error-medium: "red-500" !default;
+$color-error-dark: "red-700" !default;
+$color-error-darkest: "gray-600" !default;
+
+// Info colors
+$color-info-light: "blue-100" !default;
+$color-info-medium: "blue-600" !default;
+$color-info-dark: "blue-700" !default;
+$color-info-darkest: "gray-600" !default;
+
+// Text
+$color-text-body: $color-neutral-ink !default;
+$color-text-headings: $color-neutral-darkest !default;
+$color-text-action: $color-primary-dark !default;
+$color-text-hover: $color-primary-darkest !default;
+$color-text-disable: $color-neutral !default;
+$color-text-success: $color-success-dark !default;
+$color-text-error: $color-error-dark !default;
+
+// Backgrounds
+$color-bg-white: $color-neutral-white !default;
+$color-bg-neutral: $color-neutral-light !default;
+$color-bg-neutral-dark: $color-neutral-darkest !default;
+$color-bg-action: $color-primary-dark !default;
+$color-bg-action-hover: $color-primary-darkest !default;
+$color-bg-information: $color-info-light !default;
+$color-bg-error: $color-error-light !default;
+$color-bg-success: $color-success-light !default;
+$color-bg-warning: $color-warning-light !default;
+$color-bg-disabled: $color-neutral-lightest !default;
+
+// Borders
+$color-border-primary: $color-primary-dark !default;
+$color-border-secondary: $color-secondary-dark !default;
+$color-divider: $color-neutral-light !default;
+$color-border-information: $color-info-light !default;
+$color-border-error: $color-error-light !default;
+$color-border-success: $color-success-light !default;
+$color-border-warning: $color-warning-light !default;
+$color-border-action: $color-primary-dark !default;
+$color-border-hover: $color-primary-darkest !default;
+$color-border-focus: $color-primary-darkest !default;
+
+// Links
+$color-link: $color-primary-dark !default;
+$color-link-hover: $color-primary-darkest !default;
+$color-link-focused: $color-primary !default;
+$color-link-visited: "purple-500" !default;
+$color-link-disabled: $color-neutral-light !default;
+
+// Icons
+$color-icon-primary: $color-neutral-darkest !default;
+$color-icon-information: $color-primary-dark !default;
+$color-icon-success: $color-success-dark !default;
+$color-icon-warning: $color-neutral-darkest !default;
+$color-icon-error: $color-error-medium !default;
+$color-icon-disabled: $color-neutral !default;

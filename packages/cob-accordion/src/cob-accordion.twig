@@ -1,0 +1,13 @@
+<div class="cob-accordion {{ modifier }}"{% if multiselectable == true %} data-allow-multiple {% endif %}>
+  {% for item in items %}
+    <!-- Use the accurate heading level to maintain the document outline -->
+    <h4 class="cob-accordion__heading">
+      <button type="button" class="cob-accordion__button" aria-expanded="{{ item.expanded|default('false') }}" aria-controls="{{ id_prefix }}{{ item.id }}">
+        {{ item.title }}
+      </button>
+    </h4>
+    <div id="{{ id_prefix }}{{ item.id }}" class="cob-accordion__content cob-prose">
+      {{ item.content }}
+    </div>
+  {% endfor %}
+</div>

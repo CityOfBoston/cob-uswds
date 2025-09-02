@@ -1,0 +1,14 @@
+<div class="cob-nav__secondary">
+  <ul class="cob-nav__secondary-links">
+    {% for item in items %}
+    <li class="cob-nav__secondary-item">
+      <a href="{{ item.href }}"{% if item.current %} class="cob-current"{% endif %}>
+        {{ item.label }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if search %}
+    {% include "@components/cob-search/src/cob-search.twig" with { 'modifier': 'cob-search--small' } %}
+  {% endif %}
+</div>

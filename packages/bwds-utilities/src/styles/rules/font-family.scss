@@ -1,0 +1,40 @@
+/*
+========================================
+font-family
+----------------------------------------
+cobge:
+  .font-family-[key]
+----------------------------------------
+output:
+  font-family: [value];
+----------------------------------------
+example:
+  .font-family-sans {
+    font-family:
+      Source Sans Pro Web,
+      Helvetica Neue,
+      Helvetica,
+      Roboto,
+      Arial,
+      sans-serif;
+  }
+----------------------------------------
+*/
+
+@use "bwds-core/src/styles/settings" as *;
+@use "bwds-core/src/styles/functions" as *;
+@use "../functions/" as *;
+
+$u-font-family: (
+  font-family: (
+    base: "font-family",
+    modifiers: null,
+    values: map-collect(
+        get-palettes($font-family-palettes),
+        $font-family-manual-values
+      ),
+    settings: $font-family-settings-complete,
+    property: "font-family",
+    type: "utility",
+  ),
+);

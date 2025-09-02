@@ -1,0 +1,48 @@
+@use "bwds-core" as *;
+
+.cob-table {
+  @include cob-table;
+}
+
+.cob-table--borderless {
+  @include cob-table--borderless;
+}
+
+.cob-table--compact {
+  @include cob-table--compact;
+}
+
+.cob-table--striped {
+  @include cob-table--striped;
+}
+
+.cob-table--stacked {
+  @include at-media-max("mobile-lg") {
+    @include table-stacked-styles;
+  }
+}
+
+.cob-table--stacked-header {
+  @include at-media-max("mobile-lg") {
+    @include table-stacked-styles;
+    @include table-stacked-header-styles;
+  }
+}
+
+.width-mobile {
+  .cob-table--stacked {
+    @include cob-table--stacked;
+  }
+
+  .cob-table--stacked-header {
+    @include cob-table--stacked-header;
+  }
+}
+
+.cob-table--sticky-header {
+  @include cob-table--sticky-header;
+}
+
+.cob-table-container--scrollable {
+  @include cob-table-container--scrollable;
+}

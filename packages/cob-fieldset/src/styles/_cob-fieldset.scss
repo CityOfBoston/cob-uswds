@@ -1,0 +1,8 @@
+@use "bwds-core" as *;
+
+.cob-fieldset {
+  @extend %block-input-general;
+  border: none;
+  margin: 0;
+  padding: 0;
+}

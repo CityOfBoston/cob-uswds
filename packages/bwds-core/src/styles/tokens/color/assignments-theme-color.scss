@@ -1,0 +1,148 @@
+@use "../../settings";
+
+$assignments-theme-color: (
+  "base-lightest": settings.$theme-color-base-lightest,
+  "base-lighter": settings.$theme-color-base-lighter,
+  "base-light": settings.$theme-color-base-light,
+  "base": settings.$theme-color-base,
+  "base-dark": settings.$theme-color-base-dark,
+  "base-darker": settings.$theme-color-base-darker,
+  "base-darkest": settings.$theme-color-base-darkest,
+  "ink": settings.$theme-color-base-darkest,
+  "primary-lighter": settings.$theme-color-primary-lighter,
+  "primary-vivid": settings.$theme-color-primary-vivid,
+  "primary-darker": settings.$theme-color-primary-darker,
+  "secondary-lighter": settings.$theme-color-secondary-lighter,
+  "secondary-vivid": settings.$theme-color-secondary-vivid,
+  "secondary-darker": settings.$theme-color-secondary-darker,
+  "accent-warm-darkest": settings.$theme-color-accent-warm-darkest,
+  "accent-warm-darker": settings.$theme-color-accent-warm-darker,
+  "accent-warm-dark": settings.$theme-color-accent-warm-dark,
+  "accent-warm": settings.$theme-color-accent-warm,
+  "accent-warm-light": settings.$theme-color-accent-warm-light,
+  "accent-warm-lighter": settings.$theme-color-accent-warm-lighter,
+  "accent-warm-lightest": settings.$theme-color-accent-warm-lightest,
+  "accent-cool-darkest": settings.$theme-color-accent-cool-darkest,
+  "accent-cool-darker": settings.$theme-color-accent-cool-darker,
+  "accent-cool-dark": settings.$theme-color-accent-cool-dark,
+  "accent-cool": settings.$theme-color-accent-cool,
+  "accent-cool-light": settings.$theme-color-accent-cool-light,
+  "accent-cool-lighter": settings.$theme-color-accent-cool-lighter,
+  "accent-cool-lightest": settings.$theme-color-accent-cool-lightest,
+  "error-lighter": settings.$theme-color-error-lighter,
+  "error-darker": settings.$theme-color-error-darker,
+  "warning-lighter": settings.$theme-color-warning-lighter,
+  "warning-darker": settings.$theme-color-warning-darker,
+  "success-lighter": settings.$theme-color-success-lighter,
+  "success-darker": settings.$theme-color-success-darker,
+  "info-lighter": settings.$theme-color-info-lighter,
+  "info-darker": settings.$theme-color-info-darker,
+  "disabled-lighter": settings.$theme-color-disabled-lighter,
+  "disabled-light": settings.$theme-color-disabled-light,
+  "disabled": settings.$theme-color-disabled,
+  "disabled-dark": settings.$theme-color-disabled-dark,
+  "disabled-darker": settings.$theme-color-disabled-darker,
+  "emergency": settings.$theme-color-emergency,
+  "emergency-dark": settings.$theme-color-emergency-dark,
+
+  /*
+  ----------------------------------------
+  BWDS colors
+  ----------------------------------------
+  */
+
+  // Neutral colors
+  "neutral-white": settings.$color-neutral-white,
+  "neutral-lightest": settings.$color-neutral-lightest,
+  "neutral-light": settings.$color-neutral-light,
+  "neutral": settings.$color-neutral,
+  "neutral-dark": settings.$color-neutral-dark,
+  "neutral-darkest": settings.$color-neutral-darkest,
+  "neutral-ink": settings.$color-neutral-ink,
+
+  // Primary colors
+  "primary-lightest": settings.$color-primary-lightest,
+  "primary-light": settings.$color-primary-light,
+  "primary": settings.$color-primary,
+  "primary-dark": settings.$color-primary-dark,
+  "primary-darkest": settings.$color-primary-darkest,
+
+  // Secondary colors
+  "secondary-lightest": settings.$color-secondary-lightest,
+  "secondary-light": settings.$color-secondary-light,
+  "secondary": settings.$color-secondary,
+  "secondary-dark": settings.$color-secondary-dark,
+  "secondary-darkest": settings.$color-secondary-darkest,
+
+  // Error colors
+  "error-light": settings.$color-error-light,
+  "error": settings.$color-error-medium,
+  "error-dark": settings.$color-error-dark,
+  "error-darkest": settings.$color-error-darkest,
+
+  // Warning colors
+  "warning-light": settings.$color-warning-light,
+  "warning": settings.$color-warning-medium,
+  "warning-dark": settings.$color-warning-dark,
+  "warning-darkest": settings.$color-warning-darkest,
+
+  // Success colors
+  "success-light": settings.$color-success-light,
+  "success": settings.$color-success-medium,
+  "success-dark": settings.$color-success-dark,
+  "success-darkest": settings.$color-success-darkest,
+
+  // Info colors
+  "info-light": settings.$color-info-light,
+  "info": settings.$color-info-medium,
+  "info-dark": settings.$color-info-dark,
+  "info-darkest": settings.$color-info-darkest,
+
+  // Text colors
+  "text-body": settings.$color-text-body,
+  "text-headings": settings.$color-text-headings,
+  "text-action": settings.$color-text-action,
+  "text-hover": settings.$color-text-hover,
+  "text-disable": settings.$color-text-disable,
+  "text-success": settings.$color-text-success,
+  "text-error": settings.$color-text-error,
+
+  // Background colors
+  "bg-white": settings.$color-bg-white,
+  "bg-neutral": settings.$color-bg-neutral,
+  "bg-neutral-dark": settings.$color-bg-neutral-dark,
+  "bg-action": settings.$color-bg-action,
+  "bg-action-hover": settings.$color-bg-action-hover,
+  "bg-information": settings.$color-bg-information,
+  "bg-error": settings.$color-bg-error,
+  "bg-success": settings.$color-bg-success,
+  "bg-warning": settings.$color-bg-warning,
+  "bg-disabled": settings.$color-bg-disabled,
+
+  // Border colors
+  "border-primary": settings.$color-border-primary,
+  "border-secondary": settings.$color-border-secondary,
+  "divider": settings.$color-divider,
+  "border-information": settings.$color-border-information,
+  "border-error": settings.$color-border-error,
+  "border-success": settings.$color-border-success,
+  "border-warning": settings.$color-border-warning,
+  "border-action": settings.$color-border-action,
+  "border-hover": settings.$color-border-hover,
+  "border-focus": settings.$color-border-focus,
+
+  // Link colors
+  "link": settings.$color-link,
+  "link-hover": settings.$color-link-hover,
+  "link-focused": settings.$color-link-focused,
+  "link-visited": settings.$color-link-visited,
+  "link-disabled": settings.$color-link-disabled,
+
+  // Icon colors
+  "icon-primary": settings.$color-icon-primary,
+  "icon-information": settings.$color-icon-information,
+  "icon-success": settings.$color-icon-success,
+  "icon-warning": settings.$color-icon-warning,
+  "icon-error": settings.$color-icon-error,
+  "icon-disabled": settings.$color-icon-disabled,
+);

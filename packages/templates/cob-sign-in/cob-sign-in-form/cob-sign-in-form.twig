@@ -1,0 +1,46 @@
+{% set password_id = password.input.id |default('password-sign-in') %}
+
+<form class="cob-form">
+  <fieldset class="cob-fieldset">
+    <legend class="cob-legend cob-legend--large">{{ form.legend |default('Access your account') }}</legend>
+    {# Email #}
+    <label class="cob-label" for="{{ email.input.id |default('email') }}">
+      {{ email.label |default('Email address') }}
+    </label>
+    <input
+      class="cob-input"
+      id="{{ email.input.id |default('email') }}"
+      name="{{ email.input.id |default('email') }}"
+      type="{{ email.input.type |default('email') }}"
+      autocapitalize="off"
+      autocorrect="off"
+      required
+    >
+    {# /Email #}
+    {# Password #}
+    <label class="cob-label" for="{{ password_id }}">
+      {{ password.label |default('Password')}}
+    </label>
+    <input
+      class="cob-input"
+      id="{{ password_id }}"
+      name="password"
+      type="password"
+      required
+    >
+    {% include "@components/_cob-password/src/cob-password.twig" with {
+      toggle: password.toggle
+    } %}
+    {# /Password #}
+    <input class="cob-button" type="submit" value="{{ submit.label |default('Sign in') }}">
+    {# Forgot password #}
+    <p>
+      <a
+        href="{{ placeholder_link |default('javascript:void()') }}"
+        title="{{ recovery.title |default('Forgot password') }}">
+        {{ recovery.label |default('Forgot password?') }}
+      </a>
+    </p>
+    {# /Forgot password #}
+  </fieldset>
+</form>

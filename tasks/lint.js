@@ -43,8 +43,8 @@ async function lintSass(callback) {
   const { errored, report } = await stylelint.lint({
     files: [
       `${PROJECT_SASS_SRC}/**/*.scss`,
-      `!${PROJECT_SASS_SRC}/uswds/**/*.scss`,
-      `!${PROJECT_SASS_SRC}/uswds-elements/lib/**/*.scss`,
+      `!${PROJECT_SASS_SRC}/bwds/**/*.scss`,
+      `!${PROJECT_SASS_SRC}/bwds-elements/lib/**/*.scss`,
     ],
     formatter: "string",
   });

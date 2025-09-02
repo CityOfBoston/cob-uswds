@@ -1,0 +1,22 @@
+{% include '@components/cob-banner/src/cob-banner.twig' %}
+
+{% include '@components/cob-site-alert/src/cob-site-alert.twig' %}
+
+<div class="cob-section">
+  <div class="grid-container">
+    <div class="grid-row grid-gap">
+      <div class="cob-layout-docs__sidenav desktop:grid-col-3">
+        {% include '@components/cob-sidenav/src/cob-sidenav.twig' %}
+      </div>
+
+      <main class="cob-layout-docs__main desktop:grid-col-9 cob-prose cob-layout-docs" id="main-content">
+        {% for alert in alerts %}
+          {% include '@components/cob-alert/src/cob-alert.twig' with alert %}
+        {% endfor %}
+        {% include "@components/cob-type-setting/src/cob-type-setting--line-length.twig" %}
+      </main>
+    </div>
+  </div>
+</div>
+
+{% include '@components/cob-footer/src/cob-footer.twig' %}

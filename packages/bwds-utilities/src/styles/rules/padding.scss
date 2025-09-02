@@ -1,0 +1,49 @@
+/*
+========================================
+padding
+----------------------------------------
+cobge:
+  .padding-[modifier]*-[key]
+----------------------------------------
+output:
+  padding[-modifier]: [value];
+----------------------------------------
+example:
+  .padding-0 {
+    padding: 0;
+  }
+
+  .padding-bottom-1px {
+    padding-bottom: 1px;
+  }
+----------------------------------------
+*/
+
+@use "bwds-core/src/styles/settings" as *;
+@use "bwds-core/src/styles/functions" as *;
+@use "../functions/" as *;
+
+$u-padding: (
+  padding: (
+    base: "padding",
+    modifiers: (
+      noModifier: "",
+      "y": (
+        "-top",
+        "-bottom",
+      ),
+      "x": (
+        "-left",
+        "-right",
+      ),
+      "top": "-top",
+      "right": "-right",
+      "bottom": "-bottom",
+      "left": "-left",
+    ),
+    values: map-collect(get-palettes($padding-palettes), $padding-manual-values),
+    settings: $padding-settings-complete,
+    property: "padding",
+    type: "utility",
+  ),
+);

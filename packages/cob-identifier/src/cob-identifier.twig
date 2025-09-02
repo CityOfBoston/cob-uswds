@@ -1,0 +1,83 @@
+{% set placeholder_logo = img_path ~ '/circle-gray-20.svg' %}
+
+<div class="cob-identifier">
+  <section
+    class="cob-identifier__section cob-identifier__section--masthead"
+    aria-label="{{ masthead.aria_label }}">
+    <div class="cob-identifier__container">
+      {%- if masthead.parent.logo or masthead.agency.logo -%}
+        <div class="cob-identifier__logos">
+          <a href="{{ masthead.parent.url }}" class="cob-identifier__logo">
+            <img
+              class="cob-identifier__logo-img"
+              src="{{ masthead.parent.logo|default(placeholder_logo) }}"
+              alt="{{ masthead.parent.name |e }} logo"
+              role="img">
+          </a>
+          {%- if masthead.agency.logo %}
+            <a href="javascript:void(0);" class="cob-identifier__logo">
+              <img
+                class="cob-identifier__logo-img"
+                {% if masthead.agency.logo %}
+                src="{{ masthead.agency.logo|default(placeholder_logo) }}"
+                {% endif %}
+                alt="{{ masthead.agency.name |e }} logo"
+                role="img">
+            </a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+      <section class="cob-identifier__identity" aria-label="{{ masthead.description }}">
+        <p class="cob-identifier__identity-domain">{{ domain }}</p>
+        <p class="cob-identifier__identity-disclaimer">
+        {% if masthead.content_prefix %}
+            <span aria-hidden="true">
+              {{ masthead.content_prefix }}
+            </span>
+          {% endif %}
+          {{ masthead.content }}
+          <a href="{{ placeholder_link }}">{{ masthead.parent.name |e }}</a>
+          {% if masthead.agency.url %}
+            {{ (lang == "es") ? "y" : "and" }}
+          {% endif %}
+          {% if masthead.agency.name or masthead.agency.shortname %}
+            {{ (lang == "en") ? "the" : ""}}
+          {%- endif %}
+          {% if mashead.agency.name or masthead.agency.shortname %}
+            <a href="{{ masthead.agency.url | default(placeholder_link) }}">
+              {% if masthead.agency.name -%}
+                {{ masthead.agency.name |e }}
+              {% else %}
+                {{ masthead.agency.shortname |e }}
+              {%- endif -%}
+            </a>
+          {% endif %}
+          {% if masthead.taxpayer_disclaimer.display %}
+          . {{ masthead.taxpayer_disclaimer.content }}
+          {%- endif -%}
+        </p>
+      </section>
+    </div>
+  </section>
+  <nav class="cob-identifier__section cob-identifier__section--required-links" aria-label="{{ required_links.aria_label }}">
+    <div class="cob-identifier__container">
+      <ul class="cob-identifier__required-links-list">
+        {% for link in required_links.links %}
+          <li class="cob-identifier__required-links-item">
+            <a href="{{ link.url }}" class="cob-identifier__required-link cob-link">
+              {{ link.label }} {{ link.include_shortname ? masthead.parent.shortname |e }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+  {% if cobgov.display %}
+  <section class="cob-identifier__section cob-identifier__section--cobgov" aria-label="{{ cobgov.aria_label }}">
+    <div class="cob-identifier__container">
+      <div class="cob-identifier__cobgov-description">{{ cobgov.description }}</div>
+      <a href="{{ cobgov.link.url }}" class="cob-link">{{ cobgov.link.label }}</a>
+    </div>
+  </section>
+  {% endif -%}
+</div>

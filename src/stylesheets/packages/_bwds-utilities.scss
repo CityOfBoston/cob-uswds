@@ -1,0 +1,9 @@
+// Utilities
+// -------------------------------------
+
+// Src
+@forward "bwds-utilities/src/styles/utility-fonts";
+@use "bwds-utilities/src/styles/rules/package" as *;
+@use "bwds-core/src/styles/mixins/utility-builder" as *;
+
+@include render-utilities-in($utilities-package);

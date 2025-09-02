@@ -1,0 +1,10 @@
+@use "bwds-core" as *;
+
+.cob-hint {
+  @extend %block-input-general;
+  color: color("base");
+}
+
+.cob-hint--required {
+  color: color("error-dark");
+}

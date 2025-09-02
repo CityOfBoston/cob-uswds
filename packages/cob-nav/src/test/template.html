@@ -1,0 +1,79 @@
+<div class="cob-overlay"></div>
+<header class="cob-header cob-header--basic">
+  <div class="cob-nav-container">
+    <div class="cob-navbar">
+      <div class="cob-logo" id="basic-logo">
+        <em class="cob-logo__text">
+          <a href="/" title="Home" aria-label="Home">Project title</a>
+        </em>
+      </div>
+      <button type="button" class="cob-menu-btn">Menu</button>
+    </div>
+    <nav class="cob-nav">
+      <button type="button" class="cob-nav__close">
+        <img src="../../dist/img/close.svg" alt="close">
+      </button>
+      <ul class="cob-nav__primary cob-accordion">
+        <li class="cob-nav__primary-item">
+          <button
+            type="button"
+            class="cob-accordion__button cob-nav__link  cob-current"
+            aria-expanded="false"
+            aria-controls="basic-nav-section-one">
+            <span>Current section</span>
+          </button>
+          <ul id="basic-nav-section-one" class="cob-nav__submenu">
+            <li class="cob-nav__submenu-item">
+              <a href="#">Navigation link</a>
+            </li>
+            <li class="cob-nav__submenu-item">
+              <a href="#">Navigation link</a>
+            </li>
+            <li class="cob-nav__submenu-item">
+              <a href="#">Navigation link</a>
+            </li>
+          </ul>
+        </li>
+        <li class="cob-nav__primary-item">
+          <button
+            type="button"
+            class="cob-accordion__button cob-nav__link"
+            aria-expanded="false"
+            aria-controls="basic-nav-section-two">
+            <span>Section</span>
+          </button>
+          <ul id="basic-nav-section-two" class="cob-nav__submenu">
+            <li class="cob-nav__submenu-item">
+              <a href="#">Navigation link</a>
+            </li>
+            <li class="cob-nav__submenu-item">
+              <a href="#">Navigation link</a>
+            </li>
+            <li class="cob-nav__submenu-item">
+              <a href="#">Navigation link</a>
+            </li>
+          </ul>
+        </li>
+        <li class="cob-nav__primary-item">
+          <a class="cob-nav__link" href="javascript:void(0)">
+            <span>Simple link</span>
+          </a>
+        </li>
+      </ul>
+      <form class="cob-search cob-search--small ">
+        <div role="search">
+          <label class="cob-sr-only" for="basic-search-field-small">
+            Search small
+          </label>
+          <input class="cob-input" id="basic-search-field-small" type="search" name="search">
+          <button class="cob-button" type="submit">
+            <span class="cob-sr-only">Search</span>
+          </button>
+        </div>
+      </form>
+    </nav>
+  </div>
+</header>
+
+<!-- Tests: "makes all other page content invisible to screen readers" -->
+<div id="other-content"></div>

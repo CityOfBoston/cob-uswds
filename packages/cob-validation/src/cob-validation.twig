@@ -1,0 +1,17 @@
+<form class="cob-form">
+  <fieldset class="cob-fieldset">
+    <legend class="cob-legend cob-legend--large">Enter a code</legend>
+    <div class="cob-alert cob-alert--info cob-alert--validation">
+      <div class="cob-alert__body">
+        <h3 class="cob-alert__heading">Code requirements</h3>
+        <ul class="cob-checklist" id="validate-code">
+          <li class="cob-checklist__item" data-validator="uppercase">Use at least one uppercase character</li>
+          <li class="cob-checklist__item" data-validator="numerical">Use at least one number</li>
+        </ul>
+      </div>
+    </div>
+    <label class="cob-label" for="code">Code</label>
+    <input class="cob-input" id="code" name="code" type="text" data-validate-uppercase="[A-Z]" data-validate-numerical="\d" data-validation-element="validate-code">
+    <input class="cob-button" type="submit" value="Submit code">
+  </fieldset>
+</form>

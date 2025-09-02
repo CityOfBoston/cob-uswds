@@ -1,0 +1,38 @@
+@use "bwds-core" as *;
+
+// Hero feature
+// ==========================
+
+.cob-hero {
+  @include border-box-sizing;
+  @include typeset;
+  background-image: url("#{$theme-hero-image}");
+  background-position: center;
+  background-size: cover;
+  color: color("white");
+
+  > .grid-container {
+    position: relative;
+    @include u-padding-y($theme-site-margins-width);
+  }
+}
+
+.cob-hero__callout {
+  background-color: color("primary-darker");
+  padding: units(4);
+
+  @include at-media("tablet") {
+    max-width: units("mobile");
+  }
+}
+
+.cob-hero__heading {
+  @include typeset-h2;
+  color: color("accent-cool");
+  line-height: line-height("heading", 2);
+}
+
+.cob-hero__heading--alt {
+  color: color("white");
+  display: block;
+}

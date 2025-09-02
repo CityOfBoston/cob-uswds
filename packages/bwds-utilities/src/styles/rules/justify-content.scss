@@ -1,0 +1,34 @@
+/*
+========================================
+justify-content
+----------------------------------------
+cobge:
+  .flex-justify-[key]
+----------------------------------------
+output:
+  justify-content: [value];
+----------------------------------------
+example:
+  .flex-justify-start {
+    justify-content: flex-start;
+  }
+----------------------------------------
+*/
+
+@use "bwds-core/src/styles/settings" as *;
+@use "bwds-core/src/styles/functions" as *;
+@use "../functions/" as *;
+
+$u-justify-content: (
+  justify-content: (
+    base: "flex",
+    modifiers: null,
+    values: map-collect(
+        get-palettes($justify-content-palettes),
+        $justify-content-manual-values
+      ),
+    settings: $justify-content-settings-complete,
+    property: "justify-content",
+    type: "utility",
+  ),
+);

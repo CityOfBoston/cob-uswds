@@ -1,0 +1,16 @@
+<form class="cob-form">
+  <fieldset class="cob-fieldset">
+    <legend class="cob-legend cob-legend--large">Enter a comment</legend>
+    <div class="cob-alert cob-alert--info cob-alert--validation">
+      <div class="cob-alert__body">
+        <h3 class="cob-alert__heading">Comment requirements</h3>
+        <ul class="cob-checklist" id="validate-comment">
+          <li class="cob-checklist__item" data-validator="empty">Cannot be empty</li>
+        </ul>
+      </div>
+    </div>
+    <label class="cob-label" for="comment">Comment</label>
+    <textarea class="cob-textarea" id="comment" name="comment" data-validate-empty="\S" data-validation-element="validate-comment"></textarea>
+    <input class="cob-button" type="submit" value="Submit code">
+  </fieldset>
+</form>

@@ -6,27 +6,27 @@ const del = require("del");
 const dutil = require("./utils/doc-util");
 const { logError } = require('./utils/doc-util');
 const { copyIcons } = require("./copy");
-const iconConfig = require("../packages/usa-icon/src/usa-icons.config");
+const iconConfig = require("../packages/cob-icon/src/cob-icons.config");
 
 const svgPath = "dist/img";
 
 function cleanIcons() {
-  return del(`${svgPath}/usa-icons`);
+  return del(`${svgPath}/cob-icons`);
 }
 
 function collectIcons() {
-  dutil.logMessage("collectIcons", "Collecting default icon set in dist/img/usa-icons");
+  dutil.logMessage("collectIcons", "Collecting default icon set in dist/img/cob-icons");
   return src([
     `node_modules/@material-design-icons/svg/filled/{${iconConfig.material}}.svg`,
-    `packages/usa-icon/src/img/material-icons-deprecated/{${iconConfig.materialDeprecated}}.svg`,
-    `packages/usa-icon/src/img/uswds-icons/{${iconConfig.uswds}}.svg`,
+    `packages/cob-icon/src/img/material-icons-deprecated/{${iconConfig.materialDeprecated}}.svg`,
+    `packages/cob-icon/src/img/bwds-icons/{${iconConfig.bwds}}.svg`,
   ])
-    .pipe(dest(`${svgPath}/usa-icons`))
+    .pipe(dest(`${svgPath}/cob-icons`))
 }
 
 function buildSprite(done) {
   return (
-    src(`${svgPath}/usa-icons/*.svg`)
+    src(`${svgPath}/cob-icons/*.svg`)
       .pipe(svgSprite())
       .on("error", logError)
       .pipe(dest(svgPath))
@@ -35,13 +35,13 @@ function buildSprite(done) {
 }
 
 function renameSprite() {
-  return src(`${svgPath}/usa-icons.svg`)
+  return src(`${svgPath}/cob-icons.svg`)
     .pipe(rename(`${svgPath}/sprite.svg`))
     .pipe(dest(`./`));
 }
 
 function cleanSprite() {
-  return del(`${svgPath}/usa-icons.svg`);
+  return del(`${svgPath}/cob-icons.svg`);
 }
 
 exports.buildSpriteStandalone = series(

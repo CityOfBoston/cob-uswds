@@ -1,0 +1,24 @@
+<div class="cob-step-indicator {{ modifier }}">
+  <ol class="cob-step-indicator__segments"{% if noLabels %} aria-hidden="true"{% endif %}>
+    {% for step in steps %}
+      <li class="cob-step-indicator__segment{% if step.status == "complete" %} cob-step-indicator__segment--complete{% endif %}{% if step.status == "current" %} cob-step-indicator__segment--current{% endif %}"{% if step.status == "current" and showLabels %} aria-current="true"{% endif %}>
+        {% if step.label %}
+          <span class="cob-step-indicator__segment-label">{{ step.label }}
+            {% if step.status == "complete" %}<span class="cob-sr-only">completed</span>{% endif %}
+            {% if step.status == "incomplete" %}<span class="cob-sr-only">not completed</span>{% endif %}
+          </span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+  <div class="cob-step-indicator__header">
+    <h4 class="cob-step-indicator__heading">
+      <span class="cob-step-indicator__heading-counter">
+        <span class="cob-sr-only">Step</span>
+        <span class="cob-step-indicator__current-step">{{ currentStep }}</span>
+        <span class="cob-step-indicator__total-steps">of {{ steps.length }}</span>
+      </span>
+      <span class="cob-step-indicator__heading-text">Supporting documents</span>
+    </h4>
+  </div>
+</div>

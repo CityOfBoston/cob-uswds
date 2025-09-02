@@ -1,0 +1,49 @@
+{% macro cobButton(label, modifier, type, additional_class, additional_attributes) %}
+  <button
+    class="cob-button {{ modifier }} {{ additional_class | default("") }}"
+    type="{{ type ? type : "button" }}"
+    {{ additional_attributes }}
+  >
+    {% if icon_position == 'left' or icon_position == 'both' %}{{- icon -}}{% endif %}
+    {{- label -}}
+    {% if icon_position == 'right' or icon_position == 'both' %}{{- icon -}}{% endif %}
+  </button>
+{% endmacro %}
+
+{# Twig loader requirement for macro to work. #}
+{% import _self as button %}
+
+{% if 'cob-button--outline cob-button--inverse' in modifier %}
+  <div class="bg-base-darkest padding-1" style="max-width: fit-content">
+{% endif %}
+
+{% set icon %}
+  <!-- @TODO: Allow size to be passed as a argument. -->
+  <!-- Example: cob-icon--size-{3-9} -->
+  <svg class="cob-icon" aria-hidden="true" foccobble="false" role="img">
+    <use href="./img/sprite.svg#{{ icon_name | default("add_circle_outline") }}"></use>
+  </svg>
+{% endset %}
+
+{% if is_demo and 'cob-button--big' not in modifier %}
+  {{ button.cobButton('Default', modifier, type) }}
+  {{ button.cobButton('Hover', modifier, type, "cob-button--hover") }}
+  {{ button.cobButton('Active', modifier, type, "cob-button--active") }}
+  {{ button.cobButton('Focus', modifier, type, "cob-focus") }}
+  {{ button.cobButton('Disabled', modifier, type, null, 'disabled') }}
+  {{ button.cobButton('aria-disabled', modifier, type, null, 'aria-disabled="true"') }}
+  {{ button.cobButton('Unstyled button', modifier, type, 'cob-button--unstyled') }}
+
+{% else %}
+  {{ button.cobButton('Default', modifier, type) }}
+
+  {% if is_demo and 'cob-button--big' in modifier %}
+    {{ button.cobButton('Disabled', modifier, type, null, 'disabled') }}
+    {{ button.cobButton('aria-disabled', modifier, type, null, 'aria-disabled="true"') }}
+    {{ button.cobButton('Unstyled button', modifier, type, 'cob-button--unstyled') }}
+  {% endif %}
+{% endif %}
+
+{% if 'cob-button--outline cob-button--inverse' in modifier %}
+  </div>
+{% endif %}

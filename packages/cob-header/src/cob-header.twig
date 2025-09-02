@@ -1,0 +1,12 @@
+<div class="cob-overlay"></div>
+<header class="cob-header cob-header--basic {{ modifier }}">
+  <div class="cob-nav-container">
+    {% include "@components/cob-header/src/_includes/cob-navbar.twig" %}
+    {% if nav %}
+    <nav aria-label="{{ nav.aria_label }}" class="cob-nav">
+      {% include "@components/cob-nav/src/cob-nav__primary/cob-nav__primary.twig" %}
+      {% include "@components/cob-search/src/cob-search.twig" with search.settings %}
+    </nav>
+    {% endif %}
+  </div>
+</header>
