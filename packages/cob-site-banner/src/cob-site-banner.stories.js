@@ -8,6 +8,11 @@ import angleArrowDown from "./img/cob-angle-arrow-down.svg";
 export default {
   title: "Components/COB Site Banner",
   argTypes: {
+    stickToTop: {
+      control: { type: "boolean" },
+      defaultValue: false,
+      description: "Whether the banner should stick to the top of the viewport when scrolling"
+    },
     bannerText: {
       control: { type: "text" },
       defaultValue: "An official website of the City of Boston.",
@@ -55,9 +60,11 @@ const Template = (args) => {
   const element = document.createElement('div');
   element.innerHTML = component(defaultArgs);
   
-  setTimeout(() => {
+  // USWDS components are initialized by uswds-core/start.js globally
+  // This shouldn't be necessary, but we'll add it as a safety
+  window.addEventListener('load', () => {
     behavior.on(element);
-  }, 0);
+  });
   
   return element;
 };

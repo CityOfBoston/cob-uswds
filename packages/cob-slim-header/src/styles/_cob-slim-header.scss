@@ -25,16 +25,19 @@ $slim-header-text-color: color("ink") !default;
   background-color: $slim-header-background-color;
   border-bottom: 1px solid #F2F2F2;
   width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: z-index(100);
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    z-index: z-index(100);
+  }
 
   &__content {
-    @include grid-container($theme-header-max-width);
+    margin: 0 auto;
     display: flex;
     align-items: center;
     height: $slim-header-height;
-    padding: 0 units(1);
+    padding: 0 units(2);
     position: relative;
   }
 
@@ -58,10 +61,11 @@ $slim-header-text-color: color("ink") !default;
     height: $slim-header-icon-size;
     width: auto;
     min-width: calc($slim-header-icon-size * 3.5);
-    background-image: url('../img/cob-boston-logo.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    object-fit: contain;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__separator {
@@ -87,7 +91,15 @@ $slim-header-text-color: color("ink") !default;
 
   &__additional-content {
     @include typeset-p;
-    @include u-margin-left("auto");
+    @include u-margin(0);
+    @include u-padding(0);
+    @include u-text("ink");
+    @include u-white-space("no-wrap");
+    display: flex;
+    align-items: center;
+    margin-top: 0 !important;
+    margin-left: auto;
+    padding-right: 0;
   }
 }
 
@@ -104,23 +116,28 @@ $slim-header-text-color: color("ink") !default;
     }
 
     &__logo {
-      height: units(3); // Further reduce logo size
-      min-width: calc($slim-header-icon-size * 2.5); // Reduce min-width
+      display: none; // Hide desktop logo
+
+      &--mobile {
+        display: block; // Show mobile logo
+        height: units(3); // 24px height for mobile
+        width: units(6); // 48px width for mobile
+        min-width: auto; // Remove min-width constraint
+      }
     }
 
     &__separator {
-      @include u-height(2); // Reduce separator height
-      @include u-margin-x(1); // Reduce horizontal margin
+      display: none; // Hide separator on mobile
     }
 
     &__mayor-text {
-      font-size: size("body", "3xs"); // Reduce text size
-      margin-left: units(1); // Reduce margin
-      @include u-white-space("wrap"); // Allow text to wrap if needed
+      display: none; // Hide text on mobile
     }
 
     &__additional-content {
-      display: none; // Hide additional content on mobile
+      display: flex; // Show additional content if present
+      margin-left: auto;
+      font-size: size("body", "3xs"); // Reduce text size
     }
   }
 } 

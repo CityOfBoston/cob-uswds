@@ -1,10 +1,16 @@
 import component from "./cob-slim-header.twig";
 import behavior from "./index.js";
 import bostonLogo from "./img/cob-boston-logo.svg";
+import bostonLogoMobile from "./img/cob-boston-logo-mobile.svg";
 
 export default {
   title: "Components/COB Slim Header",
   argTypes: {
+    stickToTop: {
+      control: { type: "boolean" },
+      defaultValue: false,
+      description: "Whether the header should stick to the top of the viewport when scrolling"
+    },
     logoUrl: {
       control: { type: "text" },
       description: "URL for the logo link",
@@ -39,7 +45,8 @@ const Template = (args) => {
     ...args,
     // In Storybook, we use the imported assets directly
     assetPath: "",
-    bostonLogo
+    bostonLogo,
+    bostonLogoMobile,
   };
 
   // Render the component
@@ -56,6 +63,7 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
+  stickToTop: false,
   logoUrl: "https://www.boston.gov",
   logoAlt: "City of Boston",
   mayorText: "Mayor Michelle Wu",

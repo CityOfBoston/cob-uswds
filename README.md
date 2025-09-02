@@ -75,7 +75,8 @@ To add a new custom COB component, follow these steps:
    ```
 2. **Import CSS**: Import the compiled CSS in your project:
    ```html
-   <link rel="stylesheet" href="node_modules/@account/cob-uswds/dist/css/uswds.min.css">
+   <link rel="stylesheet" 
+   href="node_modules/@account/cob-uswds/dist/css/uswds.min.css">
    ```
 3. **Using Theme Tokens**: Reference theme tokens in your custom styles:
    ```html
@@ -87,4 +88,5 @@ To add a new custom COB component, follow these steps:
    </style>
    ```
 
-For more detailed information on using USWDS tokens and utilities, refer to the [USWDS documentation](https://designsystem.digital.gov/ ).
+For more detailed information on using USWDS tokens and utilities, refer to the 
+[USWDS documentation](https://designsystem.digital.gov/).

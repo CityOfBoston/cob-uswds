@@ -4,6 +4,11 @@ import behavior from "./index.js";
 export default {
   title: "Components/COB Slim Footer",
   argTypes: {
+    stickToBottom: {
+      control: { type: "boolean" },
+      description: "Whether the footer should stick to the bottom of the viewport",
+      defaultValue: false,
+    },
     privacyPolicyUrl: {
       control: { type: "text" },
       description: "URL for Privacy Policy",
@@ -65,4 +70,4 @@ const Template = (args) => {
 export const Default = Template.bind({});
 Default.args = {
   // Using the default values from argTypes
-}; 
+};

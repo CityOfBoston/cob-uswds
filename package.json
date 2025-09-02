@@ -1,6 +1,6 @@
 {
   "name": "cob-uswds",
-  "version": "1.0.6",
+  "version": "1.0.25",
   "description": "Customized USWDS UI components and visual style guide based on City of Boston Patterns Library",
   "engines": {
     "node": ">= 4"

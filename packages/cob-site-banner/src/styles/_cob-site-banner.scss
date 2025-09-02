@@ -2,9 +2,9 @@
 @use "uswds-core" as *;
 
 // Variables
-$banner-icon-size: 9rem !default;
-$banner-icon-size-mobile: 5rem !default;
-$banner-chevron-size: 1rem !default;
+$banner-icon-size: 8rem !default; // A bit smaller
+$banner-icon-size-mobile: 4rem !default; // A bit smaller
+$banner-chevron-size: 0.75rem !default; // Smaller arrow icon
 $banner-background-color: color("cob-charles-blue") !default; // COB Charles Blue
 $banner-text-color: color("white") !default; // White
 $banner-link-color: color("white") !default; // White
@@ -20,38 +20,82 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
   font-size: size("body", "3xs");
   width: 100%;
 
-  &__content {
+  &--sticky {
+    position: sticky;
+    top: 0;
+    z-index: z-index("top");
+  }
+
+  &__header {
+    background-color: $banner-background-color;
+    color: $banner-text-color;
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+
+    &--expanded {
+      .cob-site-banner__toggle-icon-img {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__inner {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 units(2);
-    max-width: units("desktop");
-    margin: 0 auto;
-    height: units(5); // 40px (nearest token to 38px)
-    transition: height 0.3s ease-in-out;
-    cursor: pointer;
-
+    height: auto;
+    padding: units('05') 0;
+    
     @include at-media("desktop") {
-      padding: 0 0;
+      height: units(3);
+      padding: units('05') 0;
+    }
+  }
+  
+  &__content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: units("desktop");
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0;
+
+    @include at-media("mobile-lg") {
+      flex-direction: row;
+      gap: 0;
+      padding: 0 units(2);
     }
   }
 
   &__left {
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
+    margin-bottom: 0;
+    width: 100%;
+    justify-content: center;
+
+    @include at-media("mobile-lg") {
+      width: auto;
+      justify-content: flex-start;
+    }
+
+    span {
+      color: $banner-text-color;
+    }
   }
 
   &__icon {
     display: block;
     margin-right: units(1);
-    height: $banner-icon-size-mobile;
-    width: $banner-icon-size-mobile;
-    background-image: url('../img/cob-boston-icon.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    height: units(4);
+    width: units(8);
+    object-fit: contain;
 
     @include at-media("mobile-lg") {
       height: $banner-icon-size;
@@ -60,62 +104,53 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     }
   }
 
-  &__toggle {
-    @include button-unstyled;
-    color: $banner-text-color;
-    font-weight: font-weight("normal");
-    margin-left: units(0.5);
-    text-decoration: underline;
-    cursor: inherit;
-    pointer-events: none;
-
-    &:focus {
-      @include focus-outline;
-    }
-  }
-
   &__right {
     display: flex;
     align-items: center;
-    margin-left: units(1);
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+
+    @include at-media("mobile-lg") {
+      width: auto;
+      justify-content: flex-start;
+      margin-left: units(1);
+    }
   }
 
-  &__toggle-icon {
+  &__button {
     @include button-unstyled;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: $banner-chevron-size;
-    width: $banner-chevron-size;
-    cursor: inherit;
-    pointer-events: none;
     color: $banner-text-color;
-    background-color: transparent !important;
-    padding: 0;
-    border: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url('../img/cob-angle-arrow-down.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-
+    font-weight: font-weight("normal");
+    text-decoration: underline;
+    cursor: pointer;
+    background-color: transparent;
+    pointer-events: none; // Make the button non-interactive so clicks pass through to the banner
+    
     &:focus {
       @include focus-outline;
-      background-color: transparent !important;
-    }
-
-    &[aria-expanded="true"] {
-      transform: rotate(180deg);
     }
   }
 
-  &__details {
+  &__button-text {
+    margin-right: units(1);
+  }
+
+  &__toggle-icon-img {
+    height: $banner-chevron-size;
+    width: $banner-chevron-size;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+
+  &__content {
     background-color: $banner-details-background-color;
     border-top: 1px solid #dfe1e2;
     overflow: hidden;
-    pointer-events: none;
+    width: 100%;
+    cursor: default; // Override the pointer cursor when over the content
 
     &[hidden] {
       display: none !important;
@@ -126,13 +161,12 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     }
   }
 
-  &__details-inner {
+  &__content-inner {
     display: flex;
     flex-direction: column;
     max-width: units("desktop");
     margin: 0 auto;
     padding: units(2);
-    pointer-events: auto;
 
     @include at-media("tablet") {
       flex-direction: row;
@@ -177,13 +211,6 @@ $banner-details-text-color: color("ink") !default; // Equivalent to ink
     margin-top: units(0.5);
     height: units(8);
     width: units(8);
-    background-image: url('../img/cob-city-hall-icon.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
-
-  &__info:last-child &__info-icon {
-    background-image: url('../img/cob-https-lock-icon.svg');
+    object-fit: contain;
   }
 } 

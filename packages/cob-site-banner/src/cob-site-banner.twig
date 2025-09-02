@@ -1,42 +1,41 @@
-{% set banner_id = "cob-site-banner-content" %}
+{% set banner_id = "cob-site-banner-content-" ~ random() %}
 
-<div class="cob-site-banner" data-site-banner>
-  <div class="cob-site-banner__content">
-    <div class="cob-site-banner__left">
-      <span class="cob-site-banner__icon"></span>
-      <span>{{ bannerText }} 
-        <button class="cob-site-banner__toggle" aria-expanded="{{ isExpanded ? 'true' : 'false' }}" aria-controls="{{ banner_id }}">
-          {{ toggleText }}
-        </button>
-        <noscript>
-          <a href="#{{ banner_id }}" class="cob-site-banner__toggle">{{ toggleText }}</a>
-        </noscript>
-      </span>
-    </div>
-    <div class="cob-site-banner__right">
-      <button class="cob-site-banner__toggle-icon" aria-expanded="{{ isExpanded ? 'true' : 'false' }}" aria-controls="{{ banner_id }}" aria-label="{{ toggleText }}"></button>
-      <noscript>
-        <a href="#{{ banner_id }}" class="cob-site-banner__toggle-icon" aria-label="{{ toggleText }}"></a>
-      </noscript>
-    </div>
-  </div>
-
-  <div class="cob-site-banner__details" id="{{ banner_id }}" {{ isExpanded ? '' : 'hidden' }}>
-    <div class="cob-site-banner__details-inner">
-      <div class="cob-site-banner__info">
-        <span class="cob-site-banner__info-icon"></span>
-        <div>
-          <strong>{{ officialWebsiteHeading }}</strong>
-          <p>{{ officialWebsiteText }}</p>
+<section class="cob-site-banner{% if stickToTop %} cob-site-banner--sticky{% endif %}" aria-label="Official government website">
+  <div class="cob-site-accordion">
+    <header class="cob-site-banner__header{% if isExpanded %} cob-site-banner__header--expanded{% endif %}">
+      <div class="cob-site-banner__inner">
+        <div class="cob-site-banner__content-wrapper">
+          <div class="cob-site-banner__left">
+            <img src="./img/cob-boston-icon.svg" alt="" class="cob-site-banner__icon">
+            <span>{{ bannerText }}</span>
+          </div>
+          <div class="cob-site-banner__right">
+            <button class="cob-site-banner__button" aria-expanded="{{ isExpanded ? 'true' : 'false' }}" aria-controls="{{ banner_id }}">
+              <span class="cob-site-banner__button-text">{{ toggleText }}</span>
+              <img src="./img/cob-angle-arrow-down.svg" alt="" class="cob-site-banner__toggle-icon-img" aria-hidden="true">
+            </button>
+          </div>
         </div>
       </div>
-      <div class="cob-site-banner__info">
-        <span class="cob-site-banner__info-icon"></span>
-        <div>
-          <strong>{{ secureWebsiteHeading }}</strong>
-          <p>{{ secureWebsiteText }}</p>
+      
+      <div class="cob-site-banner__content" id="{{ banner_id }}" {{ isExpanded ? '' : 'hidden' }}>
+        <div class="cob-site-banner__content-inner">
+          <div class="cob-site-banner__info">
+            <img src="./img/cob-city-hall-icon.svg" alt="" class="cob-site-banner__info-icon">
+            <div>
+              <strong>{{ officialWebsiteHeading }}</strong>
+              <p>{{ officialWebsiteText }}</p>
+            </div>
+          </div>
+          <div class="cob-site-banner__info">
+            <img src="./img/cob-https-lock-icon.svg" alt="" class="cob-site-banner__info-icon">
+            <div>
+              <strong>{{ secureWebsiteHeading }}</strong>
+              <p>{{ secureWebsiteText }}</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </header>
   </div>
-</div> 
+</section> 

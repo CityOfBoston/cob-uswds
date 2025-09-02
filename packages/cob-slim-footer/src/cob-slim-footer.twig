@@ -1,7 +1,9 @@
-<div class="cob-slim-footer" data-slim-footer>
+{% set stickToBottom = stickToBottom|default(false) %}
+
+<div class="cob-slim-footer{% if stickToBottom %} cob-slim-footer--sticky{% endif %}">
   <div class="cob-slim-footer__content">
     <div class="cob-slim-footer__left">
-      <span class="cob-slim-footer__icon"></span>
+      <img src="./img/cob-footer-icon.png" alt="City of Boston" class="cob-slim-footer__icon">
     </div>
     
     <nav class="cob-slim-footer__nav">
@@ -17,7 +19,7 @@
     <div class="cob-slim-footer__right">
       <a href="{{ reportIssueUrl }}" class="cob-slim-footer__report">
         <span>Report an issue</span>
-        <span class="cob-slim-footer__311-icon"></span>
+        <img src="./img/cob-311.svg" alt="311" class="cob-slim-footer__311-icon">
       </a>
     </div>
   </div>

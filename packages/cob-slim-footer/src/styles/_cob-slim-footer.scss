@@ -9,9 +9,15 @@ $slim-footer-background-color: color("cob-charles-blue") !default;
 .cob-slim-footer {
   background-color: $slim-footer-background-color;
   width: 100%;
-  position: fixed;
-  bottom: 0;
+  position: relative;
   z-index: z-index(100);
+
+  &--sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
   &__content {
     display: flex;
@@ -33,10 +39,7 @@ $slim-footer-background-color: color("cob-charles-blue") !default;
     height: $slim-footer-icon-size;
     width: auto;
     min-width: calc($slim-footer-icon-size * 1.5);
-    background-image: url('../img/cob-footer-icon.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    object-fit: contain;
   }
 
   &__nav {
@@ -104,10 +107,7 @@ $slim-footer-background-color: color("cob-charles-blue") !default;
     height: units(4);
     width: auto;
     min-width: units(3);
-    background-image: url('../img/cob-311.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    object-fit: contain;
   }
 }
 
